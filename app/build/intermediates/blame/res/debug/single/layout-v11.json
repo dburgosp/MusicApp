@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    }
+]

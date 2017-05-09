@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.david.musicapp.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:padding="16dp"
+        android:text="@string/intro_text1" />
+
+    <TextView
+        android:id="@+id/phrases"
+        style="@style/CategoryStylePortrait"
+        android:background="@color/purple_1"
+        android:text="@string/category_playlists" />
+
+    <TextView
+        android:id="@+id/numbers"
+        style="@style/CategoryStylePortrait"
+        android:background="@color/purple_2"
+        android:text="@string/category_artists" />
+
+    <TextView
+        android:id="@+id/family"
+        style="@style/CategoryStylePortrait"
+        android:background="@color/purple_3"
+        android:text="@string/category_albums" />
+
+    <TextView
+        android:id="@+id/colors"
+        style="@style/CategoryStylePortrait"
+        android:background="@color/purple_4"
+        android:text="@string/category_songs" />
+
+    <TextView
+        android:id="@+id/genres"
+        style="@style/CategoryStylePortrait"
+        android:background="@color/purple_5"
+        android:text="@string/category_genres" />
+
+    <TextView
+        android:id="@+id/search"
+        style="@style/CategoryStylePortrait"
+        android:background="@color/purple_6"
+        android:text="@string/category_search" />
+</LinearLayout>

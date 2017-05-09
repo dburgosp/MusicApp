@@ -1,0 +1,19 @@
+<resources>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Music App</string>
+
+    <!-- Intro text for main activity. -->
+    <string name="intro_text1">This activity is the main screen of the music app. It shows a brief
+        description of the app functionality and lists the available options: play music from a list
+        of songs, artists, albums, playlists and genres. \n\nIt uses 1 vertical LinearLayout and 7
+        TextViews. This activity has two different layouts, in order to show always the 6 options
+        regardless the orientation of the display.</string>
+
+    <!-- Category names [CHAR LIMIT=20] -->
+    <string name="category_artists">Artists</string>
+    <string name="category_albums">Albums</string>
+    <string name="category_songs">Songs</string>
+    <string name="category_playlists">Playlists</string>
+    <string name="category_genres">Genres</string>
+    <string name="category_search">Search</string>
+</resources>
