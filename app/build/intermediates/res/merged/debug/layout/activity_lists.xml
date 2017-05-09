@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Sort by:"
+                android:text="Order by:"
                 android:textAlignment="center"
                 android:textAppearance="?android:textAppearanceSmall" />
 
@@ -39,7 +39,7 @@
                 android:id="@+id/spinner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.24"
+                android:layout_weight="0.01"
                 android:textAppearance="?android:textAppearanceSmall" />
         </LinearLayout>
     </LinearLayout>

@@ -15,6 +15,6 @@ public class ListsActivity extends AppCompatActivity {
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         String[] sortOptions = {"Title", "Artist", "Track #"};
         spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sortOptions));
-
+        spinner.setId(0);
     }
 }
