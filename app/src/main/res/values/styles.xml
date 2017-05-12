@@ -27,4 +27,89 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
+
+    <style name="Separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+
+    <style name="ListElementTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ListElementSubtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DrawableButtonsLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/general_padding</item>
+    </style>
+
+    <style name="DrawableButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="rowButtonsLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/general_padding</item>
+        <item name="android:layout_marginTop">@dimen/general_padding</item>
+        <item name="android:layout_marginBottom">@dimen/general_padding</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="IntroText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/general_padding</item>
+        <item name="android:layout_marginBottom">@dimen/general_padding</item>
+        <item name="android:layout_toEndOf">@+id/row_list_cover</item>
+    </style>
+
+    <style name="NowPlayingLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:backgroundTint">@color/primary_light</item>
+        <item name="android:paddingLeft">@dimen/general_padding</item>
+        <item name="android:paddingRight">@dimen/general_padding</item>
+    </style>
+
+    <style name="NowPlayingImage">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">@dimen/image</item>
+        <item name="android:layout_height">@dimen/image</item>
+        <item name="android:background">@drawable/shadow_layer</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="NowPlayingTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_toEndOf">@+id/now_playing_image</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/general_padding</item>
+    </style>
+
+    <style name="NowPlayingButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
 </resources>

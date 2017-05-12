@@ -27,20 +27,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.david.musicapp.NumbersActivity"
-            android:label="@string/category_artists" />
+            android:name="com.example.david.musicapp.RowListActivity"
+            android:label="Songs" />
         <activity
-            android:name="com.example.david.musicapp.ListsActivity"
-            android:label="@string/category_playlists" />
-        <activity
-            android:name="com.example.david.musicapp.FamilyActivity"
-            android:label="@string/category_albums" />
-        <activity
-            android:name="com.example.david.musicapp.ColorsActivity"
-            android:label="@string/category_songs" />
-        <activity
-            android:name="android.support.v7.widget.TestActivity"
-            android:label="RecyclerViewTestActivity" />
+            android:name="com.example.david.musicapp.ColumnListActivity"
+            android:label="List" />
     </application>
 
 </manifest>

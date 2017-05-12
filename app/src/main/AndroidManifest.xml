@@ -12,21 +12,16 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".NumbersActivity"
-            android:label="@string/category_artists" />
+            android:name=".RowListActivity"
+            android:label="Songs" />
         <activity
-            android:name=".ListsActivity"
-            android:label="@string/category_playlists" />
-        <activity
-            android:name=".FamilyActivity"
-            android:label="@string/category_albums" />
-        <activity
-            android:name=".ColorsActivity"
-            android:label="@string/category_songs" />
+            android:name=".ColumnListActivity"
+            android:label="List"></activity>
     </application>
 
 </manifest>

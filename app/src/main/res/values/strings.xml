@@ -2,8 +2,17 @@
     <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Music App</string>
 
-    <!-- Intro text for main activity. -->
-    <string name="intro_text1">This activity is the main screen of the music app. It shows a brief
+    <!-- Intro texts. -->
+    <string name="intro_main">This activity is the main screen of the music app. It shows a brief
+        description of the app functionality and lists the available options: play music from a list
+        of songs, artists, albums, playlists and genres.\n\nIt uses 1 vertical LinearLayout and 7
+        TextViews. This activity has two different layouts, in order to show always the 6 options
+        regardless the orientation of the display.</string>
+    <string name="intro_row_list">This activity shows a list of songs from one artist, album,
+        playlist, music genre or search result, which may be played simply tapping on them.\n\n
+        From here you may also search songs in your collection, buy music from the same artist,
+        album music genre, and play/stop the currently playing song.</string>
+    <string name="intro_column_list">This activity is the main screen of the music app. It shows a brief
         description of the app functionality and lists the available options: play music from a list
         of songs, artists, albums, playlists and genres. \n\nIt uses 1 vertical LinearLayout and 7
         TextViews. This activity has two different layouts, in order to show always the 6 options
@@ -16,4 +25,54 @@
     <string name="category_playlists">Playlists</string>
     <string name="category_genres">Genres</string>
     <string name="category_search">Search</string>
+
+    <!-- Music genres -->
+    <string name="genre_1_id">1</string>
+    <string name="genre_1_name">Rock</string>
+    <string name="genre_1_image">genre_1</string>
+    <string name="genre_2_id">2</string>
+    <string name="genre_2_name">Heavy Rock</string>
+    <string name="genre_2_image">genre_2</string>
+    <string name="genre_3_id">3</string>
+    <string name="genre_3_name">Pop</string>
+    <string name="genre_3_image">genre_3</string>
+    <string name="genre_4_id">4</string>
+    <string name="genre_4_name">Progressive Rock</string>
+    <string name="genre_4_image">genre_4</string>
+    <string name="genre_5_id">5</string>
+    <string name="genre_5_name">Operatic pop</string>
+    <string name="genre_5_image">genre_5</string>
+
+    <!-- Authors -->
+
+    <!-- Albums -->
+    <string name="album_1_id">1</string>
+    <string name="album_1_name">¡A por ellos...! que son pocos y cobardes</string>
+    <string name="album_1_image">album_1</string>
+    <string name="album_1_author_id">3</string>
+    <string name="album_2_id">2</string>
+    <string name="album_2_name">News of the World</string>
+    <string name="album_2_image">album_2</string>
+    <string name="album_2_author_id">1</string>
+    <string name="album_3_id">3</string>
+    <string name="album_3_name">Crazy World</string>
+    <string name="album_3_image">album_3</string>
+    <string name="album_3_author_id">6</string>
+    <string name="album_4_id">4</string>
+    <string name="album_4_name">Romanza</string>
+    <string name="album_4_image">album_4</string>
+    <string name="album_4_author_id">4</string>
+    <string name="album_5_id">5</string>
+    <string name="album_5_name">A Night at the Opera</string>
+    <string name="album_5_image">album_5</string>
+    <string name="album_5_author_id">1</string>
+    <string name="album_6_id">6</string>
+    <string name="album_6_name">Deseo carnal</string>
+    <string name="album_6_image">album_6</string>
+    <string name="album_6_author_id">5</string>
+    <string name="album_7_id">7</string>
+    <string name="album_7_name">Use Your Illusion I</string>
+    <string name="album_7_image">album_7</string>
+    <string name="album_7_author_id">2</string>
+
 </resources>

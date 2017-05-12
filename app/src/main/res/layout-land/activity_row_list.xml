@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/icons"
+    tools:context="com.example.david.musicapp.RowListActivity">
+
+    <ScrollView
+        android:id="@+id/row_list_main_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="66dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/general_padding">
+
+            <LinearLayout
+                android:id="@+id/row_list_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/row_list_cover"
+                    android:layout_width="168dp"
+                    android:layout_height="168dp"
+                    android:background="@drawable/shadow_layer"
+                    android:padding="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/row_list_intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/general_padding"
+                        android:text="@string/intro_row_list" />
+
+                    <LinearLayout
+                        android:id="@+id/row_list_buttons"
+                        style="@style/rowButtonsLayout">
+
+                        <Button
+                            android:id="@+id/row_list_search_button"
+                            style="@style/DrawableButton"
+                            android:layout_marginEnd="@dimen/row_padding"
+                            android:drawableStart="@drawable/ic_search_black_18dp"
+                            android:text="Search" />
+
+                        <Button
+                            android:id="@+id/row_list_buy_button"
+                            style="@style/DrawableButton"
+                            android:layout_marginStart="@dimen/row_padding"
+                            android:backgroundTint="@color/accent"
+                            android:drawableStart="@drawable/ic_shopping_cart_white_18dp"
+                            android:text="Buy music"
+                            android:textColor="@color/icons"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/row_list_first_separator"
+                style="@style/Separator"
+                android:layout_below="@+id/row_list_header" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/row_list_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/row_list_first_separator"
+                android:scrollbars="vertical" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        style="@style/NowPlayingLayout">
+
+        <ImageView
+            android:id="@+id/now_playing_image"
+            style="@style/NowPlayingImage" />
+
+        <LinearLayout style="@style/NowPlayingTitle">
+
+            <TextView
+                android:id="@+id/now_playing_title"
+                style="@style/ListElementTitle"
+                android:text="Title" />
+
+            <TextView
+                android:id="@+id/now_playing_subtitle"
+                style="@style/ListElementSubtitle"
+                android:text="Subtitle" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/NowPlayingButton"
+            android:src="@drawable/ic_play_circle_outline_black_36dp" />
+    </RelativeLayout>
+</RelativeLayout>

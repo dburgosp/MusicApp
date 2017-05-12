@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="@string/intro_text1" />
+        android:text="@string/intro_main" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,19 +25,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/phrases"
+                android:id="@+id/playlists"
                 style="@style/CategoryStyleLandscape"
                 android:background="@color/purple_1"
                 android:text="@string/category_playlists" />
 
             <TextView
-                android:id="@+id/numbers"
+                android:id="@+id/artists"
                 style="@style/CategoryStyleLandscape"
                 android:background="@color/purple_2"
                 android:text="@string/category_artists" />
 
             <TextView
-                android:id="@+id/family"
+                android:id="@+id/albums"
                 style="@style/CategoryStyleLandscape"
                 android:background="@color/purple_3"
                 android:text="@string/category_albums" />
@@ -50,7 +50,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/colors"
+                android:id="@+id/songs"
                 style="@style/CategoryStyleLandscape"
                 android:background="@color/purple_4"
                 android:text="@string/category_songs" />

@@ -1,42 +1,46 @@
 [
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\David\\.android\\build-cache\\fc31b7671d9ee58a29cc7454b0996ae685620d2a\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_spinner.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_edittext.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\David\\.android\\build-cache\\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\\output\\res\\color-v23\\abc_tint_default.xml"
+        "source": "C:\\Users\\David\\.android\\build-cache\\660954480218b0ead6eb8d8efecb59ddc608052b\\output\\res\\color-v23\\abc_tint_default.xml"
     }
 ]

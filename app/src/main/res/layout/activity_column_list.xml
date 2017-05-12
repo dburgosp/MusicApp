@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/icons"
+    android:orientation="vertical"
+    tools:context="com.example.david.musicapp.ColumnListActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/general_padding">
+
+            <TextView
+                android:id="@+id/column_list_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/general_padding"
+                android:text="@string/intro_column_list" />
+
+            <LinearLayout
+                android:id="@+id/column_list_buttons"
+                style="@style/DrawableButtonsLayout"
+                android:layout_below="@id/column_list_intro">
+
+                <Button
+                    android:id="@+id/column_list_search_button"
+                    style="@style/DrawableButton"
+                    android:layout_marginEnd="@dimen/row_padding"
+                    android:drawableStart="@drawable/ic_search_black_18dp"
+                    android:text="Search" />
+
+                <Button
+                    android:id="@+id/column_list_buy_button"
+                    style="@style/DrawableButton"
+                    android:layout_marginStart="@dimen/row_padding"
+                    android:backgroundTint="@color/accent"
+                    android:drawableStart="@drawable/ic_shopping_cart_white_18dp"
+                    android:text="Buy music"
+                    android:textColor="@color/icons"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/column_list_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/column_list_buttons"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbars="horizontal" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout style="@style/NowPlayingLayout">
+
+        <ImageView
+            android:id="@+id/column_list_now_playing_image"
+            style="@style/NowPlayingImage" />
+
+        <LinearLayout style="@style/NowPlayingTitle">
+
+            <TextView
+                android:id="@+id/column_list_now_playing_title"
+                style="@style/ListElementTitle"
+                android:text="Title" />
+
+            <TextView
+                android:id="@+id/column_list_now_playing_subtitle"
+                style="@style/ListElementSubtitle"
+                android:text="Subtitle" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/NowPlayingButton"
+            android:src="@drawable/ic_play_circle_outline_black_36dp" />
+    </RelativeLayout>
+</RelativeLayout>

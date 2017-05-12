@@ -1,10 +1,13 @@
 package com.example.david.musicapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,42 +19,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Find the View that shows the category
-        TextView numbers = (TextView) findViewById(R.id.numbers);
-        TextView phrases = (TextView) findViewById(R.id.phrases);
-        TextView family = (TextView) findViewById(R.id.family);
-        TextView colors = (TextView) findViewById(R.id.colors);
+        TextView artists = (TextView) findViewById(R.id.artists);
+        TextView playlists = (TextView) findViewById(R.id.playlists);
+        TextView albums = (TextView) findViewById(R.id.albums);
+        TextView songs = (TextView) findViewById(R.id.songs);
 
         // Set a click listener on every View
-        numbers.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the numbers View is clicked on.
+        artists.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the artists View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, com.example.david.musicapp.NumbersActivity.class);
-                startActivity(numbersIntent);
+                Intent artistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                startActivity(artistsIntent);
             }
         });
-        phrases.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the phrases View is clicked on.
+        playlists.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the playlists View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent phrasesIntent = new Intent(MainActivity.this, ListsActivity.class);
-                startActivity(phrasesIntent);
+                Intent playlistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                startActivity(playlistsIntent);
             }
         });
-        family.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family View is clicked on.
+        albums.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the albums View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent familyIntent = new Intent(MainActivity.this, com.example.david.musicapp.FamilyActivity.class);
-                startActivity(familyIntent);
+                Intent albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                startActivity(albumsIntent);
             }
         });
-        colors.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the colors View is clicked on.
+        songs.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the songs View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent colorsIntent = new Intent(MainActivity.this, com.example.david.musicapp.ColorsActivity.class);
-                startActivity(colorsIntent);
+                Intent songsIntent = new Intent(MainActivity.this, RowListActivity.class);
+                startActivity(songsIntent);
             }
         });
     }
