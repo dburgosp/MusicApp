@@ -20,12 +20,12 @@
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-mdpi\\ic_pause_circle_outline_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_play_circle_filled_black_24dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-mdpi\\ic_play_circle_filled_black_24dp.png"
-    },
-    {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_play_circle_outline_black_36dp.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-mdpi\\ic_play_circle_outline_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_play_circle_filled_black_24dp.png",
+        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-mdpi\\ic_play_circle_filled_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_play_circle_filled_black_48dp.png",
