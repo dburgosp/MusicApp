@@ -3358,9 +3358,6 @@ containing a value of this type.
         public static final int line1=0x7f0d00b7;
         public static final int line3=0x7f0d00b9;
         public static final int listMode=0x7f0d0019;
-        public static final int list_element_image=0x7f0d00bd;
-        public static final int list_element_subtitle=0x7f0d00bf;
-        public static final int list_element_title=0x7f0d00be;
         public static final int list_item=0x7f0d0050;
         public static final int masked=0x7f0d00c1;
         public static final int media_actions=0x7f0d00ab;
@@ -3394,6 +3391,9 @@ containing a value of this type.
         public static final int row_list_buy_button=0x7f0d008f;
         public static final int row_list_cover=0x7f0d008b;
         public static final int row_list_element=0x7f0d00bc;
+        public static final int row_list_element_image=0x7f0d00bd;
+        public static final int row_list_element_subtitle=0x7f0d00bf;
+        public static final int row_list_element_title=0x7f0d00be;
         public static final int row_list_first_separator=0x7f0d0090;
         public static final int row_list_header=0x7f0d008a;
         public static final int row_list_intro=0x7f0d008c;

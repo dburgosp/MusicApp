@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     final int NUMBER_OF_PLAYLISTS = 2;
     final int NUMBER_OF_PLAYLISTS_SONGS = 38;
 
-    ArrayList<Album> albums;
-    ArrayList<Author> authors;
-    ArrayList<MusicGenre> musicGenres;
-    ArrayList<Playlist> playlists;
-    ArrayList<PlaylistSong> playlistSongs;
-    ArrayList<Song> songs;
+    ArrayList<Album> albumsArrayList;
+    ArrayList<Author> authorsArrayList;
+    ArrayList<MusicGenre> musicGenresArrayList;
+    ArrayList<Playlist> playlistsArrayList;
+    ArrayList<PlaylistSong> playlistSongsArrayList;
+    ArrayList<Song> songsArrayList;
+
+    Intent artistsIntent, playlistsIntent, albumsIntent, genresIntent, songsIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,57 +36,59 @@ public class MainActivity extends AppCompatActivity {
         getData();
 
         // Find the View that shows the category
-        TextView artists = (TextView) findViewById(R.id.artists);
-        TextView playlists = (TextView) findViewById(R.id.playlists);
-        TextView albums = (TextView) findViewById(R.id.albums);
-        TextView songs = (TextView) findViewById(R.id.songs);
-        TextView genres = (TextView) findViewById(R.id.genres);
+        TextView artistsTextView = (TextView) findViewById(R.id.artists);
+        TextView playlistsTextView = (TextView) findViewById(R.id.playlists);
+        TextView albumsTextView = (TextView) findViewById(R.id.albums);
+        TextView songsTextView = (TextView) findViewById(R.id.songs);
+        TextView genresTextView = (TextView) findViewById(R.id.genres);
 
         // Set a click listener on every View
-        artists.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the artists View is clicked on.
+        artistsTextView.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the artistsTextView View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent artistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                artistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 startActivity(artistsIntent);
             }
         });
-        playlists.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the playlists View is clicked on.
+        playlistsTextView.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the playlistsArrayList View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent playlistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                playlistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 startActivity(playlistsIntent);
             }
         });
-        albums.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the albums View is clicked on.
+        albumsTextView.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the albumsArrayList View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 startActivity(albumsIntent);
             }
         });
-        genres.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the genres View is clicked on.
+        genresTextView.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the genresTextView View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent genresIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                genresIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 startActivity(genresIntent);
             }
         });
-        songs.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the songs View is clicked on.
+        songsTextView.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the songsArrayList View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent songsIntent = new Intent(MainActivity.this, RowListActivity.class);
+                songsIntent = new Intent(MainActivity.this, RowListActivity.class);
+                songsIntent.putExtra("type", 1); // Assorted list of songs.
+                putExtraMusicData(songsIntent);
                 startActivity(songsIntent);
             }
         });
     }
 
     /**
-     * Get global data for songs, authors, playlists, etc.
+     * Get global data for songsArrayList, authorsArrayList, playlistsArrayList, etc.
      */
     void getData() {
         int i, genreId, authorId, albumId, albumAuthorId, songId, songAlbumId, songGenreId;
@@ -99,70 +103,76 @@ public class MainActivity extends AppCompatActivity {
         PlaylistSong playlistSong;
 
         // Read music genres.
-        musicGenres = new ArrayList<>();
-        for (i = 1; i < NUMBER_OF_GENRES; i++) {
+        musicGenresArrayList = new ArrayList<>();
+        for (i = 1; i <= NUMBER_OF_GENRES; i++) {
             genreId = Integer.parseInt(getResources().getString(getResources().getIdentifier("genre_" + i + "_id", "string", getPackageName())));
             genreName = getResources().getString(getResources().getIdentifier("genre_" + i + "_name", "string", getPackageName()));
             genreImage = getResources().getString(getResources().getIdentifier("genre_" + i + "_image", "string", getPackageName()));
-
             musicGenre = new MusicGenre(genreId, genreName, genreImage);
-            musicGenres.add(musicGenre);
+            musicGenresArrayList.add(musicGenre);
         }
 
-        // Read authors.
-        authors = new ArrayList<>();
-        for (i = 1; i < NUMBER_OF_AUTHORS; i++) {
+        // Read authorsArrayList.
+        authorsArrayList = new ArrayList<>();
+        for (i = 1; i <= NUMBER_OF_AUTHORS; i++) {
             authorId = Integer.parseInt(getResources().getString(getResources().getIdentifier("author_" + i + "_id", "string", getPackageName())));
             authorName = getResources().getString(getResources().getIdentifier("author_" + i + "_name", "string", getPackageName()));
             authorImage = getResources().getString(getResources().getIdentifier("author_" + i + "_image", "string", getPackageName()));
-
             author = new Author(authorId, authorName, authorImage);
-            authors.add(author);
+            authorsArrayList.add(author);
         }
 
-        // Read albums.
-        albums = new ArrayList<>();
-        for (i = 1; i < NUMBER_OF_ALBUMS; i++) {
+        // Read albumsArrayList.
+        albumsArrayList = new ArrayList<>();
+        for (i = 1; i <= NUMBER_OF_ALBUMS; i++) {
             albumId = Integer.parseInt(getResources().getString(getResources().getIdentifier("album_" + i + "_id", "string", getPackageName())));
             albumName = getResources().getString(getResources().getIdentifier("album_" + i + "_name", "string", getPackageName()));
             albumImage = getResources().getString(getResources().getIdentifier("album_" + i + "_image", "string", getPackageName()));
             albumAuthorId = Integer.parseInt(getResources().getString(getResources().getIdentifier("album_" + i + "_author_id", "string", getPackageName())));
-
             album = new Album(albumId, albumName, albumImage, albumAuthorId);
-            albums.add(album);
+            albumsArrayList.add(album);
         }
 
-        // Read songs.
-        songs = new ArrayList<>();
-        for (i = 1; i < NUMBER_OF_SONGS; i++) {
+        // Read songsArrayList.
+        songsArrayList = new ArrayList<>();
+        for (i = 1; i <= NUMBER_OF_SONGS; i++) {
             songId = Integer.parseInt(getResources().getString(getResources().getIdentifier("song_" + i + "_id", "string", getPackageName())));
             songName = getResources().getString(getResources().getIdentifier("song_" + i + "_name", "string", getPackageName()));
             songAlbumId = Integer.parseInt(getResources().getString(getResources().getIdentifier("song_" + i + "_album_id", "string", getPackageName())));
             songGenreId = Integer.parseInt(getResources().getString(getResources().getIdentifier("song_" + i + "_genre_id", "string", getPackageName())));
-
             song = new Song(songId, songName, songAlbumId, songGenreId);
-            songs.add(song);
+            songsArrayList.add(song);
         }
 
-        // Read playlists.
-        playlists = new ArrayList<>();
-        for (i = 1; i < NUMBER_OF_PLAYLISTS; i++) {
+        // Read playlistsArrayList.
+        playlistsArrayList = new ArrayList<>();
+        for (i = 1; i <= NUMBER_OF_PLAYLISTS; i++) {
             playlistId = Integer.parseInt(getResources().getString(getResources().getIdentifier("playlist_" + i + "_id", "string", getPackageName())));
             playlistName = getResources().getString(getResources().getIdentifier("playlist_" + i + "_name", "string", getPackageName()));
             playlistImage = getResources().getString(getResources().getIdentifier("playlist_" + i + "_image", "string", getPackageName()));
-
             playlist = new Playlist(playlistId, playlistName, playlistImage);
-            playlists.add(playlist);
+            playlistsArrayList.add(playlist);
         }
 
-        // Read songs per playlist.
-        playlistSongs = new ArrayList<>();
+        // Read songsArrayList per playlist.
+        playlistSongsArrayList = new ArrayList<>();
         for (i = 1; i < NUMBER_OF_PLAYLISTS_SONGS; i++) {
             playlistId = Integer.parseInt(getResources().getString(getResources().getIdentifier("sp_playlist_" + i + "_id", "string", getPackageName())));
             songId = Integer.parseInt(getResources().getString(getResources().getIdentifier("sp_song_" + i + "_id", "string", getPackageName())));
-
             playlistSong = new PlaylistSong(playlistId, songId);
-            playlistSongs.add(playlistSong);
+            playlistSongsArrayList.add(playlistSong);
         }
+    }
+
+    /**
+     * Share data with the next activity using intent.putExtra
+     */
+    void putExtraMusicData(Intent intent) {
+        intent.putExtra("albumsArrayList", albumsArrayList);
+        intent.putExtra("authorsArrayList", authorsArrayList);
+        intent.putExtra("musicGenresArrayList", musicGenresArrayList);
+        intent.putExtra("playlistsArrayList", playlistsArrayList);
+        intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
+        intent.putExtra("songsArrayList", songsArrayList);
     }
 }

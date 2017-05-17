@@ -4,7 +4,7 @@ package com.example.david.musicapp;
  * Created by David on 16/05/2017.
  */
 
-public class Author {
+public class Author implements java.io.Serializable {
     private int authorId;
     private String authorName;
     private String authorImage;

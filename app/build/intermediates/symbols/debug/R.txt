@@ -883,9 +883,6 @@ int id left 0x7f0d0035
 int id line1 0x7f0d00b7
 int id line3 0x7f0d00b9
 int id listMode 0x7f0d0019
-int id list_element_image 0x7f0d00bd
-int id list_element_subtitle 0x7f0d00bf
-int id list_element_title 0x7f0d00be
 int id list_item 0x7f0d0050
 int id masked 0x7f0d00c1
 int id media_actions 0x7f0d00ab
@@ -919,6 +916,9 @@ int id row_list_buttons 0x7f0d008d
 int id row_list_buy_button 0x7f0d008f
 int id row_list_cover 0x7f0d008b
 int id row_list_element 0x7f0d00bc
+int id row_list_element_image 0x7f0d00bd
+int id row_list_element_subtitle 0x7f0d00bf
+int id row_list_element_title 0x7f0d00be
 int id row_list_first_separator 0x7f0d0090
 int id row_list_header 0x7f0d008a
 int id row_list_intro 0x7f0d008c

@@ -4,7 +4,7 @@ package com.example.david.musicapp;
  * Created by David on 16/05/2017.
  */
 
-public class MusicGenre {
+public class MusicGenre implements java.io.Serializable {
     private int genreId;
     private String genreName;
     private String genreImage;

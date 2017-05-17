@@ -4,7 +4,7 @@ package com.example.david.musicapp;
  * Created by David on 16/05/2017.
  */
 
-public class Playlist {
+public class Playlist implements java.io.Serializable {
     private int playlistId;
     private String playlistName;
     private String playlistImage;

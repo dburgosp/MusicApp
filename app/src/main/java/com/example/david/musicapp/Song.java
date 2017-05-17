@@ -4,7 +4,7 @@ package com.example.david.musicapp;
  * Created by David on 16/05/2017.
  */
 
-public class Song {
+public class Song implements java.io.Serializable {
     private int songId;
     private String songName;
     private int songAlbumId;
@@ -19,7 +19,7 @@ public class Song {
 
     public int getSongId() { return this.songId; }
 
-    public String getSongName() { return this.songName;  }
+    public String getSongName() { return this.songName; }
 
     public int getSongAlbumId() { return this.songAlbumId; }
 
