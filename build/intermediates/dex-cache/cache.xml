@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\e2e8d019a60357d3a5012e3d54e23a3408b0821f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_117ac762853cd260ac97da7667d09bd78ad1217e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -21,30 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\68063ac6acc5663f791e68104c3f750f266ca4fa\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6145a7a3bbc67ebca4e66183fc8e35722f24291a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="b5da209807da9c23efac5214b46f30676b2db0e6">
+        sha1="a79a96edfc5fda5027b930c33ce085bc7b0cd555">
         <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0f8a3d644f1c3f41217acf78e113679880488b30\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7875efca2ad143593c265d6ab8da72d6f045e75a\classes.dex" />
     </item>
 
 </items>

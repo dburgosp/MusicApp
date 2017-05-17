@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                albumsIntent.putExtra("type", 6); // List of albums.
+                putExtraMusicData(albumsIntent);
                 startActivity(albumsIntent);
             }
         });

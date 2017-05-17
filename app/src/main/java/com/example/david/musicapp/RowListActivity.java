@@ -11,6 +11,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class RowListActivity extends AppCompatActivity {
+    final int NUMBER_OF_GENRES = 5;
+    final int NUMBER_OF_AUTHORS = 6;
+    final int NUMBER_OF_ALBUMS = 7;
+    final int NUMBER_OF_SONGS = 99;
+    final int NUMBER_OF_PLAYLISTS = 2;
+    final int NUMBER_OF_PLAYLISTS_SONGS = 38;
+
     ArrayList<Album> albumsArrayList;
     ArrayList<Author> authorsArrayList;
     ArrayList<MusicGenre> musicGenresArrayList;
@@ -44,7 +51,7 @@ public class RowListActivity extends AppCompatActivity {
         switch (type) {
             case 1: // Assorted list of songs.
                 elementsArrayList = new ArrayList<Element>();
-                for (i = 0; i < 99; i++) {
+                for (i = 0; i < NUMBER_OF_SONGS; i++) {
                     // Image.
                     albumId = songsArrayList.get(i).getSongAlbumId() - 1;
                     imageName = albumsArrayList.get(albumId).getAlbumImage();
@@ -63,7 +70,7 @@ public class RowListActivity extends AppCompatActivity {
         }
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.row_list_recycler_view);
-        recyclerView.setAdapter(new RowElement(elementsArrayList, new RecyclerViewOnItemClickListener() {
+        recyclerView.setAdapter(new RecyclerViewElement(elementsArrayList, 0, new RecyclerViewOnItemClickListener() {
             @Override
             public void onClick(View v, int position) {
                 Toast toast = Toast.makeText(RowListActivity.this, "Play song #" + String.valueOf(position), Toast.LENGTH_SHORT);
