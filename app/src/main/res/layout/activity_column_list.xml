@@ -9,12 +9,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="@dimen/general_padding">
 
             <TextView
@@ -33,7 +32,9 @@
                     android:id="@+id/column_list_search_button"
                     style="@style/DrawableButton"
                     android:layout_marginEnd="@dimen/row_padding"
+                    android:drawablePadding="@dimen/row_padding"
                     android:drawableStart="@drawable/ic_search_black_18dp"
+                    android:gravity="fill"
                     android:text="Search" />
 
                 <Button
@@ -41,7 +42,9 @@
                     style="@style/DrawableButton"
                     android:layout_marginStart="@dimen/row_padding"
                     android:backgroundTint="@color/accent"
+                    android:drawablePadding="@dimen/row_padding"
                     android:drawableStart="@drawable/ic_shopping_cart_white_18dp"
+                    android:gravity="fill"
                     android:text="Buy music"
                     android:textColor="@color/icons"
                     android:textStyle="bold" />
@@ -57,13 +60,17 @@
         </RelativeLayout>
     </ScrollView>
 
-    <RelativeLayout style="@style/NowPlayingLayout">
+    <RelativeLayout
+        android:id="@+id/column_list_now_playing"
+        style="@style/NowPlayingLayout">
 
         <ImageView
             android:id="@+id/column_list_now_playing_image"
             style="@style/NowPlayingImage" />
 
-        <LinearLayout style="@style/NowPlayingTitle">
+        <LinearLayout
+            style="@style/NowPlayingTitle"
+            android:layout_toEndOf="@id/column_list_now_playing_image">
 
             <TextView
                 android:id="@+id/column_list_now_playing_title"
@@ -77,6 +84,7 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/column_list_now_playing_button"
             style="@style/NowPlayingButton"
             android:src="@drawable/ic_play_circle_outline_black_36dp" />
     </RelativeLayout>

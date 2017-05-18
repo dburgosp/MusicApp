@@ -8,15 +8,15 @@
         of songs, artists, albums, playlists and genres.\n\nIt uses 1 vertical LinearLayout and 7
         TextViews. This activity has two different layouts, in order to show always the 6 options
         regardless the orientation of the display.</string>
-    <string name="intro_row_list">This activity shows a list of songs from one artist, album,
-        playlist, music genre or search result, which may be played simply tapping on them.\n\n
-        From here you may also search songs in your collection, buy music from the same artist,
-        album music genre, and play/stop the currently playing song.</string>
-    <string name="intro_column_list">This activity is the main screen of the music app. It shows a brief
-        description of the app functionality and lists the available options: play music from a list
-        of songs, artists, albums, playlists and genres. \n\nIt uses 1 vertical LinearLayout and 7
-        TextViews. This activity has two different layouts, in order to show always the 6 options
-        regardless the orientation of the display.</string>
+    <string name="intro_row_list">This activity shows information about one artist, album, playlist,
+        music genre or search result, and provides a list of songs related to the selected content.
+        \n\nFrom here you may also search songs in your collection, buy music from the same artist,
+        album or music genre, and play/stop any song in the list.</string>
+    <string name="intro_column_list">This activity shows a list of albums, artists, genres or
+        playlists from the music library of the user of this app. It should provide a way of sorting
+        music elements by name, author, etc. At the bottom side, you can play/stop the currently
+        selected song.\n\nFrom here you may also search songs in your collection and buy music
+        online.</string>
 
     <!-- Category names [CHAR LIMIT=20] -->
     <string name="category_artists">Artists</string>

@@ -10,93 +10,108 @@
         android:id="@+id/row_list_main_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="66dp">
+        android:layout_alignParentBottom="true">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/general_padding"
-            android:orientation="vertical">
+            android:layout_margin="@dimen/general_padding">
 
             <LinearLayout
                 android:id="@+id/row_list_header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/row_padding"
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/row_list_cover"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:background="@drawable/shadow_layer"
-                    android:padding="4dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/row_list_intro"
-                    style="@style/IntroText"
-                    android:paddingStart="@dimen/row_padding"
-                    android:text="@string/intro_row_list" />
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/row_list_cover"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/shadow_layer"
+                        android:padding="4dp" />
 
-            <LinearLayout
-                android:id="@+id/row_list_buttons"
-                style="@style/DrawableButtonsLayout"
-                android:layout_below="@id/row_list_header">
+                    <Button
+                        android:id="@+id/row_list_search_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/row_padding"
+                        android:drawablePadding="@dimen/row_padding"
+                        android:drawableStart="@drawable/ic_search_black_18dp"
+                        android:gravity="fill"
+                        android:hapticFeedbackEnabled="false"
+                        android:text="Search" />
 
-                <Button
-                    android:id="@+id/row_list_search_button"
-                    style="@style/DrawableButton"
-                    android:layout_marginEnd="@dimen/row_padding"
-                    android:drawableStart="@drawable/ic_search_black_18dp"
-                    android:text="Search" />
+                    <Button
+                        android:id="@+id/row_list_buy_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/accent"
+                        android:drawablePadding="@dimen/row_padding"
+                        android:drawableStart="@drawable/ic_shopping_cart_white_18dp"
+                        android:gravity="fill"
+                        android:text="Buy music"
+                        android:textColor="@color/icons"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                <Button
-                    android:id="@+id/row_list_buy_button"
-                    style="@style/DrawableButton"
-                    android:layout_marginStart="@dimen/row_padding"
-                    android:backgroundTint="@color/accent"
-                    android:drawableStart="@drawable/ic_shopping_cart_white_18dp"
-                    android:text="Buy music"
-                    android:textColor="@color/icons"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/row_list_intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/general_padding"
+                        android:text="@string/intro_row_list" />
+                </LinearLayout>
             </LinearLayout>
 
             <View
                 android:id="@+id/row_list_first_separator"
                 style="@style/Separator"
-                android:layout_below="@+id/row_list_buttons" />
+                android:layout_below="@+id/row_list_header" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/row_list_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/row_list_first_separator"
+                android:layout_marginBottom="@dimen/general_padding"
                 android:scrollbars="vertical" />
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/row_list_now_playing"
         style="@style/NowPlayingLayout">
 
         <ImageView
-            android:id="@+id/now_playing_image"
+            android:id="@+id/row_list_now_playing_image"
             style="@style/NowPlayingImage" />
 
-        <LinearLayout style="@style/NowPlayingTitle">
+        <LinearLayout
+            style="@style/NowPlayingTitle"
+            android:layout_toEndOf="@+id/row_list_now_playing_image">
 
             <TextView
-                android:id="@+id/now_playing_title"
-                style="@style/ListElementTitle"
-                android:text="Title" />
+                android:id="@+id/row_list_now_playing_title"
+                style="@style/ListElementTitle" />
 
             <TextView
-                android:id="@+id/now_playing_subtitle"
-                style="@style/ListElementSubtitle"
-                android:text="Subtitle" />
+                android:id="@+id/row_list_now_playing_subtitle"
+                style="@style/ListElementSubtitle" />
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/row_list_now_playing_button"
             style="@style/NowPlayingButton"
             android:src="@drawable/ic_play_circle_outline_black_36dp" />
     </RelativeLayout>

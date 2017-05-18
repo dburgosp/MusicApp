@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
     <LinearLayout
         android:id="@+id/row_list_element"
         android:layout_width="match_parent"
@@ -24,13 +26,11 @@
 
             <TextView
                 android:id="@+id/row_list_element_title"
-                style="@style/ListElementTitle"
-                android:text="Title" />
+                style="@style/ListElementTitle" />
 
             <TextView
                 android:id="@+id/row_list_element_subtitle"
-                style="@style/ListElementSubtitle"
-                android:text="Subtitle" />
+                style="@style/ListElementSubtitle" />
         </LinearLayout>
     </LinearLayout>
 

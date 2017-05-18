@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 artistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                artistsIntent.putExtra("param_type", 2); // List of artists.
+                putExtraMusicData(artistsIntent);
                 startActivity(artistsIntent);
             }
         });
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 playlistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                playlistsIntent.putExtra("param_type", 5); // List of playlists.
+                putExtraMusicData(playlistsIntent);
                 startActivity(playlistsIntent);
             }
         });
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
-                albumsIntent.putExtra("type", 6); // List of albums.
+                albumsIntent.putExtra("param_type", 3); // List of albums.
                 putExtraMusicData(albumsIntent);
                 startActivity(albumsIntent);
             }
@@ -74,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 genresIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                genresIntent.putExtra("param_type", 4); // List of available music genres.
+                putExtraMusicData(genresIntent);
                 startActivity(genresIntent);
             }
         });
@@ -82,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 songsIntent = new Intent(MainActivity.this, RowListActivity.class);
-                songsIntent.putExtra("type", 1); // Assorted list of songs.
+                songsIntent.putExtra("param_type", 1); // Assorted list of songs.
                 putExtraMusicData(songsIntent);
                 startActivity(songsIntent);
             }
@@ -176,5 +182,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
+        intent.putExtra("now_playing", false);
     }
 }

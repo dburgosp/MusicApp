@@ -1,12 +1,13 @@
 package com.example.david.musicapp;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
@@ -26,31 +27,101 @@ public class ColumnListActivity extends AppCompatActivity {
     ArrayList<Song> songsArrayList;
     ArrayList<Element> elementsArrayList;
 
-    int type;
+    int param_type;
+    boolean now_playing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        int i, albumId, authorId, imageId;
-        String imageName, authorName, albumName;
-        Drawable drawable;
-        Element element;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_column_list);
 
-        // Get music data and parameters.
+        // Get music data and parameters from previous activity.
+        getData();
+        RelativeLayout nowPlayingView = (RelativeLayout) findViewById(R.id.column_list_now_playing);
+        if (!now_playing) nowPlayingView.setVisibility(View.GONE);
+        else nowPlayingView.setVisibility(View.VISIBLE);
+
+        // Get the list of elements to be listed.
+        getSongs();
+
+        // Compose the dynamic list of elements.
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
+        recyclerView.setAdapter(new RecyclerViewElement(elementsArrayList, 1, new RecyclerViewOnItemClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent songsIntent = new Intent(ColumnListActivity.this, RowListActivity.class);
+                switch (param_type) {
+                    case 2: // List of artists.
+                        songsIntent.putExtra("param_type", 6); // List of songs by artist.
+                        songsIntent.putExtra("param_artist", position + 1);
+                        break;
+
+                    case 3: // List of albums.
+                        songsIntent.putExtra("param_type", 7); // List of songs by album.
+                        songsIntent.putExtra("param_album", position + 1);
+                        break;
+
+                    case 4: // List of genres.
+                        songsIntent.putExtra("param_type", 8); // List of songs by music genre.
+                        songsIntent.putExtra("param_genre", position + 1);
+                        break;
+
+                    case 5: // List of playlists.
+                        songsIntent.putExtra("param_type", 9); // List of songs by playlist.
+                        songsIntent.putExtra("param_playlist", position + 1);
+                        break;
+                }
+                putExtraMusicData(songsIntent);
+                startActivity(songsIntent);
+            }
+        }));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    }
+
+    void getData() {
         albumsArrayList = (ArrayList<Album>) getIntent().getSerializableExtra("albumsArrayList");
         authorsArrayList = (ArrayList<Author>) getIntent().getSerializableExtra("authorsArrayList");
         musicGenresArrayList = (ArrayList<MusicGenre>) getIntent().getSerializableExtra("musicGenresArrayList");
         playlistsArrayList = (ArrayList<Playlist>) getIntent().getSerializableExtra("playlistsArrayList");
         playlistSongsArrayList = (ArrayList<PlaylistSong>) getIntent().getSerializableExtra("playlistSongsArrayList");
         songsArrayList = (ArrayList<Song>) getIntent().getSerializableExtra("songsArrayList");
-        type = getIntent().getIntExtra("type", 1);
+        param_type = getIntent().getIntExtra("param_type", 2);
+        now_playing = getIntent().getBooleanExtra("now_playing", false);
+    }
 
-        // Songs to be listed.
-        switch (type) {
-            case 6: // List of albums.
-                elementsArrayList = new ArrayList<Element>();
+    void getSongs() {
+        int i, n, albumId, authorId, imageId, genreId, playlistId;
+        String imageName, authorName, albumName, title, subtitle;
+        Drawable drawable;
+        Element element;
+
+        elementsArrayList = new ArrayList<Element>();
+        switch (param_type) {
+            case 2: // List of artists.
+                for (i = 0; i < NUMBER_OF_AUTHORS; i++) {
+                    // Image.
+                    imageName = authorsArrayList.get(i).getAuthorImage();
+                    imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
+                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+
+                    // Title.
+                    title = authorsArrayList.get(i).getAuthorName();
+
+                    // Subtitle.
+                    n = 0;
+                    authorId = authorsArrayList.get(i).getAuthorId();
+                    for (Album album : albumsArrayList) {
+                        if (album.getAlbumAuthorId() == authorId) n++;
+                    }
+                    subtitle = "Albums: " + n;
+
+                    // Build current element.
+                    element = new Element(0, title, subtitle, drawable);
+                    elementsArrayList.add(element);
+                }
+                break;
+
+            case 3: // List of albums.
                 for (i = 0; i < NUMBER_OF_ALBUMS; i++) {
                     // Image.
                     imageName = albumsArrayList.get(i).getAlbumImage();
@@ -58,27 +129,77 @@ public class ColumnListActivity extends AppCompatActivity {
                     drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
 
                     // Title.
-                    albumName = albumsArrayList.get(i).getAlbumName();
+                    title = albumsArrayList.get(i).getAlbumName();
 
                     // Subtitle.
                     authorId = albumsArrayList.get(i).getAlbumAuthorId() - 1;
-                    authorName = authorsArrayList.get(authorId).getAuthorName();
+                    subtitle = authorsArrayList.get(authorId).getAuthorName();
 
                     // Build current element.
-                    element = new Element(albumName, authorName, drawable);
+                    element = new Element(0, title, subtitle, drawable);
+                    elementsArrayList.add(element);
+                }
+                break;
+
+            case 4: // List of genres.
+                for (i = 0; i < NUMBER_OF_GENRES; i++) {
+                    // Image.
+                    imageName = musicGenresArrayList.get(i).getGenreImage();
+                    imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
+                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+
+                    // Title.
+                    title = musicGenresArrayList.get(i).getGenreName();
+
+                    // Subtitle.
+                    n = 0;
+                    genreId = musicGenresArrayList.get(i).getGenreId();
+                    for (Song song : songsArrayList) {
+                        if (song.getSongGenreId() == genreId) n++;
+                    }
+                    subtitle = "Songs: " + n;
+
+                    // Build current element.
+                    element = new Element(0, title, subtitle, drawable);
+                    elementsArrayList.add(element);
+                }
+                break;
+
+            case 5: // List of playlists.
+                for (i = 0; i < NUMBER_OF_PLAYLISTS; i++) {
+                    // Image.
+                    imageName = playlistsArrayList.get(i).getPlaylistImage();
+                    imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
+                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+
+                    // Title.
+                    title = playlistsArrayList.get(i).getPlaylistName();
+
+                    // Subtitle.
+                    n = 0;
+                    playlistId = playlistsArrayList.get(i).getPlaylistId();
+                    for (PlaylistSong ps : playlistSongsArrayList) {
+                        if (ps.getPlaylistId() == playlistId) n++;
+                    }
+                    subtitle = "Songs: " + n;
+
+                    // Build current element.
+                    element = new Element(0, title, subtitle, drawable);
                     elementsArrayList.add(element);
                 }
                 break;
         }
+    }
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
-        recyclerView.setAdapter(new RecyclerViewElement(elementsArrayList, 1, new RecyclerViewOnItemClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                Toast toast = Toast.makeText(ColumnListActivity.this, "Play song #" + String.valueOf(position), Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        }));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    /**
+     * Share data with the next activity using intent.putExtra
+     */
+    void putExtraMusicData(Intent intent) {
+        intent.putExtra("albumsArrayList", albumsArrayList);
+        intent.putExtra("authorsArrayList", authorsArrayList);
+        intent.putExtra("musicGenresArrayList", musicGenresArrayList);
+        intent.putExtra("playlistsArrayList", playlistsArrayList);
+        intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
+        intent.putExtra("songsArrayList", songsArrayList);
     }
 }
