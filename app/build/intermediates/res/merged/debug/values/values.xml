@@ -2363,6 +2363,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/secondary_text</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
     </style>
     <style name="ListElementTitle">
         <item name="android:layout_width">wrap_content</item>
@@ -2370,6 +2372,8 @@
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
     </style>
     <style name="NowPlayingButton">
         <item name="android:layout_width">wrap_content</item>
@@ -2399,6 +2403,7 @@
         <item name="android:layout_centerInParent">true</item>
         <item name="android:orientation">vertical</item>
         <item name="android:padding">@dimen/general_padding</item>
+        <item name="android:layout_marginEnd">32dp</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

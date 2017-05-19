@@ -27,8 +27,7 @@ public class ColumnListActivity extends AppCompatActivity {
     ArrayList<Song> songsArrayList;
     ArrayList<Element> elementsArrayList;
 
-    int param_type;
-    boolean now_playing;
+    int param_type, param_now_playing = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +37,13 @@ public class ColumnListActivity extends AppCompatActivity {
         // Get music data and parameters from previous activity.
         getData();
         RelativeLayout nowPlayingView = (RelativeLayout) findViewById(R.id.column_list_now_playing);
-        if (!now_playing) nowPlayingView.setVisibility(View.GONE);
+        if (param_now_playing < 0) nowPlayingView.setVisibility(View.GONE);
         else nowPlayingView.setVisibility(View.VISIBLE);
 
         // Get the list of elements to be listed.
         getSongs();
 
-        // Compose the dynamic list of elements.
+        // Compose the dynamic list of elements and define the onClick behaviour.
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
         recyclerView.setAdapter(new RecyclerViewElement(elementsArrayList, 1, new RecyclerViewOnItemClickListener() {
             @Override
@@ -71,6 +70,7 @@ public class ColumnListActivity extends AppCompatActivity {
                         songsIntent.putExtra("param_playlist", position + 1);
                         break;
                 }
+                songsIntent.putExtra("param_now_playing", param_now_playing);
                 putExtraMusicData(songsIntent);
                 startActivity(songsIntent);
             }
@@ -86,7 +86,7 @@ public class ColumnListActivity extends AppCompatActivity {
         playlistSongsArrayList = (ArrayList<PlaylistSong>) getIntent().getSerializableExtra("playlistSongsArrayList");
         songsArrayList = (ArrayList<Song>) getIntent().getSerializableExtra("songsArrayList");
         param_type = getIntent().getIntExtra("param_type", 2);
-        now_playing = getIntent().getBooleanExtra("now_playing", false);
+        param_now_playing = getIntent().getIntExtra("param_now_playing", -1);
     }
 
     void getSongs() {

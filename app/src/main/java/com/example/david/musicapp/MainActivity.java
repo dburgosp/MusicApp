@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     final int NUMBER_OF_PLAYLISTS = 2;
     final int NUMBER_OF_PLAYLISTS_SONGS = 38;
 
+    int now_playing = -1;
+
     ArrayList<Album> albumsArrayList;
     ArrayList<Author> authorsArrayList;
     ArrayList<MusicGenre> musicGenresArrayList;
@@ -182,6 +184,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
-        intent.putExtra("now_playing", false);
+        intent.putExtra("param_now_playing", -1);
+    }
+
+    public int getNowPlaying(){
+        return now_playing;
     }
 }
