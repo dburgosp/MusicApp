@@ -21,7 +21,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/general_padding"
-                android:text="@string/intro_column_list" />
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="@string/intro_column_list">
+
+                <requestFocus />
+            </TextView>
 
             <LinearLayout
                 android:id="@+id/column_list_buttons"

@@ -1,24 +1,30 @@
 package com.example.david.musicapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class ColumnListActivity extends AppCompatActivity {
+    // Constants.
     final int NUMBER_OF_GENRES = 5;
     final int NUMBER_OF_AUTHORS = 6;
     final int NUMBER_OF_ALBUMS = 7;
-    final int NUMBER_OF_SONGS = 99;
     final int NUMBER_OF_PLAYLISTS = 2;
-    final int NUMBER_OF_PLAYLISTS_SONGS = 38;
+    final int COLUMN_LIST_ACTIVITY = 2;
 
+    // Global variable.
     ArrayList<Album> albumsArrayList;
     ArrayList<Author> authorsArrayList;
     ArrayList<MusicGenre> musicGenresArrayList;
@@ -26,72 +32,124 @@ public class ColumnListActivity extends AppCompatActivity {
     ArrayList<PlaylistSong> playlistSongsArrayList;
     ArrayList<Song> songsArrayList;
     ArrayList<Element> elementsArrayList;
+    RelativeLayout nowPlayingView;
+    ImageView nowPlayingImage;
+    TextView nowPlayingTitle;
+    TextView nowPlayingSubtitle;
+    ImageView nowPlayingButton;
 
-    int param_type, param_now_playing = -1;
+    // Shared data with other activities.
+    int param_type, param_artist, param_album, param_genre, param_playlist, param_now_playing_song = 0;
+    boolean param_now_playing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_column_list);
 
+        // Get views from the current layout.
+        nowPlayingView = (RelativeLayout) findViewById(R.id.column_list_now_playing);
+        nowPlayingImage = (ImageView) findViewById(R.id.column_list_now_playing_image);
+        nowPlayingTitle = (TextView) findViewById(R.id.column_list_now_playing_title);
+        nowPlayingSubtitle = (TextView) findViewById(R.id.column_list_now_playing_subtitle);
+        nowPlayingButton = (ImageView) findViewById(R.id.column_list_now_playing_button);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
+
         // Get music data and parameters from previous activity.
-        getData();
-        RelativeLayout nowPlayingView = (RelativeLayout) findViewById(R.id.column_list_now_playing);
-        if (param_now_playing < 0) nowPlayingView.setVisibility(View.GONE);
-        else nowPlayingView.setVisibility(View.VISIBLE);
+        getData(getIntent());
 
         // Get the list of elements to be listed.
-        getSongs();
+        getElements();
 
         // Compose the dynamic list of elements and define the onClick behaviour.
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
         recyclerView.setAdapter(new RecyclerViewElement(elementsArrayList, 1, new RecyclerViewOnItemClickListener() {
             @Override
             public void onClick(View v, int position) {
                 Intent songsIntent = new Intent(ColumnListActivity.this, RowListActivity.class);
                 switch (param_type) {
                     case 2: // List of artists.
+                    case 6: // List of songs by artist.
                         songsIntent.putExtra("param_type", 6); // List of songs by artist.
                         songsIntent.putExtra("param_artist", position + 1);
                         break;
 
                     case 3: // List of albums.
+                    case 7: // List of songs by album.
                         songsIntent.putExtra("param_type", 7); // List of songs by album.
                         songsIntent.putExtra("param_album", position + 1);
                         break;
 
                     case 4: // List of genres.
+                    case 8: // List of songs by music genre.
                         songsIntent.putExtra("param_type", 8); // List of songs by music genre.
                         songsIntent.putExtra("param_genre", position + 1);
                         break;
 
                     case 5: // List of playlists.
+                    case 9: // List of songs by playlist.
                         songsIntent.putExtra("param_type", 9); // List of songs by playlist.
                         songsIntent.putExtra("param_playlist", position + 1);
                         break;
                 }
-                songsIntent.putExtra("param_now_playing", param_now_playing);
+                songsIntent.putExtra("param_now_playing_song", param_now_playing_song);
                 putExtraMusicData(songsIntent);
-                startActivity(songsIntent);
+                startActivityForResult(songsIntent, COLUMN_LIST_ACTIVITY);
             }
         }));
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        // Behaviour of play/stop button.
+        nowPlayingButton.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when nowPlayingButton is clicked on.
+            @Override
+            public void onClick(View view) {
+                if (param_now_playing) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Pause music", Toast.LENGTH_SHORT);
+                    toast.show();
+                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_black_36dp));
+                    param_now_playing = false;
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Play music", Toast.LENGTH_SHORT);
+                    toast.show();
+                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_black_36dp));
+                    param_now_playing = true;
+                }
+            }
+        });
     }
 
-    void getData() {
-        albumsArrayList = (ArrayList<Album>) getIntent().getSerializableExtra("albumsArrayList");
-        authorsArrayList = (ArrayList<Author>) getIntent().getSerializableExtra("authorsArrayList");
-        musicGenresArrayList = (ArrayList<MusicGenre>) getIntent().getSerializableExtra("musicGenresArrayList");
-        playlistsArrayList = (ArrayList<Playlist>) getIntent().getSerializableExtra("playlistsArrayList");
-        playlistSongsArrayList = (ArrayList<PlaylistSong>) getIntent().getSerializableExtra("playlistSongsArrayList");
-        songsArrayList = (ArrayList<Song>) getIntent().getSerializableExtra("songsArrayList");
-        param_type = getIntent().getIntExtra("param_type", 2);
-        param_now_playing = getIntent().getIntExtra("param_now_playing", -1);
+    /**
+     * Gets extra data from previous activity and sets, if necessary, the "now playing" view at the
+     * bottom of the screen.
+     *
+     * @param intent
+     */
+    void getData(Intent intent) {
+        // Get data.
+        albumsArrayList = (ArrayList<Album>) intent.getSerializableExtra("albumsArrayList");
+        authorsArrayList = (ArrayList<Author>) intent.getSerializableExtra("authorsArrayList");
+        musicGenresArrayList = (ArrayList<MusicGenre>) intent.getSerializableExtra("musicGenresArrayList");
+        playlistsArrayList = (ArrayList<Playlist>) intent.getSerializableExtra("playlistsArrayList");
+        playlistSongsArrayList = (ArrayList<PlaylistSong>) intent.getSerializableExtra("playlistSongsArrayList");
+        songsArrayList = (ArrayList<Song>) intent.getSerializableExtra("songsArrayList");
+        param_type = intent.getIntExtra("param_type", 1);
+        param_artist = intent.getIntExtra("param_artist", 1);
+        param_album = intent.getIntExtra("param_album", 1);
+        param_genre = intent.getIntExtra("param_genre", 1);
+        param_playlist = intent.getIntExtra("param_playlist", 1);
+        param_now_playing_song = intent.getIntExtra("param_now_playing_song", -1);
+
+        // Hide/show "now playing" section.
+        setNowPlayingView(param_now_playing_song);
     }
 
-    void getSongs() {
-        int i, n, albumId, authorId, imageId, genreId, playlistId;
-        String imageName, authorName, albumName, title, subtitle;
+    /**
+     * Prepare the list of elements to show in this activity, depending on the sorting parameter
+     * param_type.
+     */
+    void getElements() {
+        int i, n, authorId, imageId, genreId, playlistId;
+        String imageName, title, subtitle;
         Drawable drawable;
         Element element;
 
@@ -102,7 +160,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     // Image.
                     imageName = authorsArrayList.get(i).getAuthorImage();
                     imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
-                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+                    drawable = getDrawable(imageId);
 
                     // Title.
                     title = authorsArrayList.get(i).getAuthorName();
@@ -126,7 +184,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     // Image.
                     imageName = albumsArrayList.get(i).getAlbumImage();
                     imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
-                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+                    drawable = getDrawable(imageId);
 
                     // Title.
                     title = albumsArrayList.get(i).getAlbumName();
@@ -146,7 +204,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     // Image.
                     imageName = musicGenresArrayList.get(i).getGenreImage();
                     imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
-                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+                    drawable = getDrawable(imageId);
 
                     // Title.
                     title = musicGenresArrayList.get(i).getGenreName();
@@ -170,7 +228,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     // Image.
                     imageName = playlistsArrayList.get(i).getPlaylistImage();
                     imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
-                    drawable = ColumnListActivity.this.getResources().getDrawable(imageId);
+                    drawable = getDrawable(imageId);
 
                     // Title.
                     title = playlistsArrayList.get(i).getPlaylistName();
@@ -201,5 +259,91 @@ public class ColumnListActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
+    }
+
+    /**
+     * Hides or shows the "now playing" view.
+     *
+     * @param songId: index of the currently playing song.
+     */
+    void setNowPlayingView(int songId) {
+        if (param_now_playing_song < 0) {
+            // Hide "now playing" view.
+            nowPlayingView.setVisibility(View.GONE);
+        } else {
+            // Show and configure "now playing" view.
+
+            // Image.
+            int albumId = songsArrayList.get(songId).getSongAlbumId() - 1;
+            String imageName = albumsArrayList.get(albumId).getAlbumImage();
+            int imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
+            nowPlayingImage.setImageDrawable(getDrawable(imageId));
+
+            // Title.
+            nowPlayingTitle.setText(songsArrayList.get(songId).getSongName());
+
+            // Subtitle.
+            int authorId = albumsArrayList.get(albumId).getAlbumAuthorId() - 1;
+            nowPlayingSubtitle.setText(authorsArrayList.get(authorId).getAuthorName());
+
+            // Set visibility and "play/stop" button.
+            if (param_now_playing)
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_black_36dp));
+            else
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_black_36dp));
+            nowPlayingView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    /**
+     * Captures the "back" button of the app, in order to send parameters to the previous activity.
+     *
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            // Back to parent activity with extra data.
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("param_type", param_type);
+            returnIntent.putExtra("param_artist", param_artist);
+            returnIntent.putExtra("param_album", param_album);
+            returnIntent.putExtra("param_genre", param_genre);
+            returnIntent.putExtra("param_playlist", param_playlist);
+            returnIntent.putExtra("param_now_playing_song", param_now_playing_song);
+            returnIntent.putExtra("param_now_playing", param_now_playing);
+            returnIntent.putExtra("albumsArrayList", albumsArrayList);
+            returnIntent.putExtra("authorsArrayList", authorsArrayList);
+            returnIntent.putExtra("musicGenresArrayList", musicGenresArrayList);
+            returnIntent.putExtra("playlistsArrayList", playlistsArrayList);
+            returnIntent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
+            returnIntent.putExtra("songsArrayList", songsArrayList);
+            putExtraMusicData(returnIntent);
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * Get data from previous activity.
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == COLUMN_LIST_ACTIVITY) {
+            if (resultCode == Activity.RESULT_OK) {
+                getData(data);
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
     }
 }

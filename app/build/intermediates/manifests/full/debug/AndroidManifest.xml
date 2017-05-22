@@ -32,6 +32,7 @@
         <activity
             android:name="com.example.david.musicapp.ColumnListActivity"
             android:label="List" />
+        <activity android:name="com.example.david.musicapp.NowPlayingActivity" />
     </application>
 
 </manifest>

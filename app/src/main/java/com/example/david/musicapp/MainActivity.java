@@ -184,10 +184,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
-        intent.putExtra("param_now_playing", -1);
+        intent.putExtra("param_now_playing_song", -1);
     }
 
-    public int getNowPlaying(){
+    public int getNowPlaying() {
         return now_playing;
     }
 }

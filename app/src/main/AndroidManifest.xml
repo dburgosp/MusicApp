@@ -21,7 +21,8 @@
             android:label="Songs" />
         <activity
             android:name=".ColumnListActivity"
-            android:label="List"></activity>
+            android:label="List" />
+        <activity android:name=".NowPlayingActivity"></activity>
     </application>
 
 </manifest>
