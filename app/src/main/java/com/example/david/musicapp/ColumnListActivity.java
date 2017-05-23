@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,13 +34,13 @@ public class ColumnListActivity extends AppCompatActivity {
     ArrayList<Song> songsArrayList;
     ArrayList<Element> elementsArrayList;
     RelativeLayout nowPlayingView;
-    ImageView nowPlayingImage;
-    TextView nowPlayingTitle;
-    TextView nowPlayingSubtitle;
-    ImageView nowPlayingButton;
+    ImageView nowPlayingImage, nowPlayingButton;
+    TextView nowPlayingTitle, nowPlayingSubtitle;
+    RecyclerView recyclerView;
+    Button buyMusicButton;
 
     // Shared data with other activities.
-    int param_type, param_artist, param_album, param_genre, param_playlist, param_now_playing_song = 0;
+    int param_type, param_artist, param_album, param_genre, param_playlist, param_now_playing_song = -1;
     boolean param_now_playing = false;
 
     @Override
@@ -53,7 +54,8 @@ public class ColumnListActivity extends AppCompatActivity {
         nowPlayingTitle = (TextView) findViewById(R.id.column_list_now_playing_title);
         nowPlayingSubtitle = (TextView) findViewById(R.id.column_list_now_playing_subtitle);
         nowPlayingButton = (ImageView) findViewById(R.id.column_list_now_playing_button);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
+        buyMusicButton = (Button) findViewById(R.id.column_list_buy_button);
 
         // Get music data and parameters from previous activity.
         getData(getIntent());
@@ -97,6 +99,18 @@ public class ColumnListActivity extends AppCompatActivity {
         }));
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
+        // Define behaviour of the "Now playing" section.
+        nowPlayingView.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when any element into the nowPlayingSection
+            // RelativeLayout is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent nowPlayingIntent = new Intent(ColumnListActivity.this, NowPlayingActivity.class);
+                putExtraMusicData(nowPlayingIntent);
+                startActivityForResult(nowPlayingIntent, COLUMN_LIST_ACTIVITY);
+            }
+        });
+
         // Behaviour of play/stop button.
         nowPlayingButton.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when nowPlayingButton is clicked on.
@@ -113,6 +127,16 @@ public class ColumnListActivity extends AppCompatActivity {
                     nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
                     param_now_playing = true;
                 }
+            }
+        });
+
+        // Behaviour of "buy music" button.
+        buyMusicButton.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when nowPlayingButton is clicked on.
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.buy_music, Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
     }
@@ -140,7 +164,7 @@ public class ColumnListActivity extends AppCompatActivity {
         param_now_playing = intent.getBooleanExtra("param_now_playing", false);
 
         // Hide/show "now playing" section.
-        setNowPlayingView(param_now_playing_song);
+        setNowPlayingView();
     }
 
     /**
@@ -171,7 +195,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     for (Album album : albumsArrayList) {
                         if (album.getAlbumAuthorId() == authorId) n++;
                     }
-                    subtitle = getResources().getString(R.string.number_of_albums) + n;
+                    subtitle = getResources().getString(R.string.number_of_albums) + ": " + n;
 
                     // Build current element.
                     element = new Element(0, title, subtitle, drawable);
@@ -221,7 +245,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     for (Song song : songsArrayList) {
                         if (song.getSongGenreId() == genreId) n++;
                     }
-                    subtitle = getResources().getString(R.string.number_of_songs) + n;
+                    subtitle = getResources().getString(R.string.number_of_songs) + ": " + n;
 
                     // Build current element.
                     element = new Element(0, title, subtitle, drawable);
@@ -248,7 +272,7 @@ public class ColumnListActivity extends AppCompatActivity {
                     for (PlaylistSong ps : playlistSongsArrayList) {
                         if (ps.getPlaylistId() == playlistId) n++;
                     }
-                    subtitle = getResources().getString(R.string.number_of_songs) + n;
+                    subtitle = getResources().getString(R.string.number_of_songs) + ": " + n;
 
                     // Build current element.
                     element = new Element(0, title, subtitle, drawable);
@@ -283,24 +307,22 @@ public class ColumnListActivity extends AppCompatActivity {
 
     /**
      * Hides or shows the "now playing" view.
-     *
-     * @param songId: index of the currently playing song.
      */
-    void setNowPlayingView(int songId) {
-        if (param_now_playing_song < 0) {
+    void setNowPlayingView() {
+        if (this.param_now_playing_song < 0) {
             // Hide "now playing" view.
             nowPlayingView.setVisibility(View.GONE);
         } else {
             // Show and configure "now playing" view.
 
             // Image.
-            int albumId = songsArrayList.get(songId).getSongAlbumId() - 1;
+            int albumId = songsArrayList.get(param_now_playing_song).getSongAlbumId() - 1;
             String imageName = albumsArrayList.get(albumId).getAlbumImage();
             int imageId = getResources().getIdentifier(imageName, "drawable", ColumnListActivity.this.getPackageName());
             nowPlayingImage.setImageDrawable(getDrawable(imageId));
 
             // Title.
-            nowPlayingTitle.setText(songsArrayList.get(songId).getSongName());
+            nowPlayingTitle.setText(songsArrayList.get(param_now_playing_song).getSongName());
 
             // Subtitle.
             int authorId = albumsArrayList.get(albumId).getAlbumAuthorId() - 1;
@@ -327,19 +349,6 @@ public class ColumnListActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             // Back to parent activity with extra data.
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("param_type", param_type);
-            returnIntent.putExtra("param_artist", param_artist);
-            returnIntent.putExtra("param_album", param_album);
-            returnIntent.putExtra("param_genre", param_genre);
-            returnIntent.putExtra("param_playlist", param_playlist);
-            returnIntent.putExtra("param_now_playing_song", param_now_playing_song);
-            returnIntent.putExtra("param_now_playing", param_now_playing);
-            returnIntent.putExtra("albumsArrayList", albumsArrayList);
-            returnIntent.putExtra("authorsArrayList", authorsArrayList);
-            returnIntent.putExtra("musicGenresArrayList", musicGenresArrayList);
-            returnIntent.putExtra("playlistsArrayList", playlistsArrayList);
-            returnIntent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
-            returnIntent.putExtra("songsArrayList", songsArrayList);
             putExtraMusicData(returnIntent);
             setResult(Activity.RESULT_OK, returnIntent);
             finish();
@@ -365,5 +374,22 @@ public class ColumnListActivity extends AppCompatActivity {
                 //Write your code if there's no result
             }
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("param_now_playing_song", param_now_playing_song);
+        outState.putBoolean("param_now_playing", param_now_playing);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        param_now_playing_song = savedInstanceState.getInt("param_now_playing_song");
+        param_now_playing = savedInstanceState.getBoolean("param_now_playing");
+
+        // Hide/show "now playing" section.
+        setNowPlayingView();
     }
 }

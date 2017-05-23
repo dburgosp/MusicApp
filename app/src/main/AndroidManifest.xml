@@ -18,11 +18,14 @@
         </activity>
         <activity
             android:name=".RowListActivity"
-            android:label="Songs" />
+            android:label="@string/title_songs_list" />
         <activity
             android:name=".ColumnListActivity"
-            android:label="List" />
-        <activity android:name=".NowPlayingActivity"></activity>
+            android:label="@string/title_options_list" />
+        <activity
+            android:name=".NowPlayingActivity"
+            android:label="@string/title_now_playing" />
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

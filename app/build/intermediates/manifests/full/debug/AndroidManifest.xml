@@ -28,11 +28,14 @@
         </activity>
         <activity
             android:name="com.example.david.musicapp.RowListActivity"
-            android:label="Songs" />
+            android:label="@string/title_songs_list" />
         <activity
             android:name="com.example.david.musicapp.ColumnListActivity"
-            android:label="List" />
-        <activity android:name="com.example.david.musicapp.NowPlayingActivity" />
+            android:label="@string/title_options_list" />
+        <activity
+            android:name="com.example.david.musicapp.NowPlayingActivity"
+            android:label="@string/title_now_playing" />
+        <activity android:name="com.example.david.musicapp.SearchActivity" />
     </application>
 
 </manifest>

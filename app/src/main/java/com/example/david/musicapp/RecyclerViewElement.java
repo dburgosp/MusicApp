@@ -67,9 +67,9 @@ public class RecyclerViewElement extends RecyclerView.Adapter<RecyclerViewElemen
                 imageView = (ImageView) itemView.findViewById(R.id.row_list_element_image);
             } else {
                 // Display elements horizontally.
-                titleTextView = (TextView) itemView.findViewById(R.id.horizontalTitleTextView);
-                subtitleTextView = (TextView) itemView.findViewById(R.id.horizontalSubtitleTextView);
-                imageView = (ImageView) itemView.findViewById(R.id.horizontalImageView);
+                titleTextView = (TextView) itemView.findViewById(R.id.columns_title);
+                subtitleTextView = (TextView) itemView.findViewById(R.id.columns_subtitle);
+                imageView = (ImageView) itemView.findViewById(R.id.columns_image);
             }
             itemView.setOnClickListener(this);
         }

@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,10 +35,11 @@ public class RowListActivity extends AppCompatActivity {
     RelativeLayout nowPlayingView;
     ImageView nowPlayingImage, nowPlayingButton, mainImage;
     TextView nowPlayingTitle, nowPlayingSubtitle;
-    Drawable headerImage;
+    RecyclerView recyclerView;
+    Button buyMusicButton;
 
     // Shared data with other activities.
-    int param_type, param_artist, param_album, param_genre, param_playlist, param_now_playing_song = 0;
+    int param_type, param_artist, param_album, param_genre, param_playlist, param_now_playing_song = -1;
     boolean param_now_playing = false;
 
     @Override
@@ -52,7 +54,8 @@ public class RowListActivity extends AppCompatActivity {
         nowPlayingSubtitle = (TextView) findViewById(R.id.row_list_now_playing_subtitle);
         nowPlayingButton = (ImageView) findViewById(R.id.row_list_now_playing_button);
         mainImage = (ImageView) findViewById(R.id.row_list_cover);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.row_list_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.row_list_recycler_view);
+        buyMusicButton = (Button) findViewById(R.id.row_list_buy_button);
 
         // Get music data and parameters.
         getData(getIntent());
@@ -69,7 +72,7 @@ public class RowListActivity extends AppCompatActivity {
                 toast.show();
                 param_now_playing_song = elementsArrayList.get(position).getSongId() - 1;
                 param_now_playing = true;
-                setNowPlayingView(param_now_playing_song);
+                setNowPlayingView();
             }
         }));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -81,6 +84,7 @@ public class RowListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent nowPlayingIntent = new Intent(RowListActivity.this, NowPlayingActivity.class);
+                putExtraMusicData(nowPlayingIntent);
                 startActivityForResult(nowPlayingIntent, ROW_LIST_ACTIVITY);
             }
         });
@@ -101,6 +105,16 @@ public class RowListActivity extends AppCompatActivity {
                     nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
                     param_now_playing = true;
                 }
+            }
+        });
+
+        // Behaviour of "buy music" button.
+        buyMusicButton.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when nowPlayingButton is clicked on.
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.buy_music, Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
     }
@@ -128,7 +142,7 @@ public class RowListActivity extends AppCompatActivity {
         param_now_playing = intent.getBooleanExtra("param_now_playing", false);
 
         // Hide/show "now playing" section.
-        setNowPlayingView(param_now_playing_song);
+        setNowPlayingView();
     }
 
     /**
@@ -336,24 +350,22 @@ public class RowListActivity extends AppCompatActivity {
 
     /**
      * Hides or shows the "now playing" view.
-     *
-     * @param songId: index of the currently playing song.
      */
-    void setNowPlayingView(int songId) {
-        if (param_now_playing_song < 0) {
+    void setNowPlayingView() {
+        if (this.param_now_playing_song < 0) {
             // Hide "now playing" view.
             nowPlayingView.setVisibility(View.GONE);
         } else {
             // Show and configure "now playing" view.
 
             // Image.
-            int albumId = songsArrayList.get(songId).getSongAlbumId() - 1;
+            int albumId = songsArrayList.get(param_now_playing_song).getSongAlbumId() - 1;
             String imageName = albumsArrayList.get(albumId).getAlbumImage();
             int imageId = getResources().getIdentifier(imageName, "drawable", RowListActivity.this.getPackageName());
             nowPlayingImage.setImageDrawable(getDrawable(imageId));
 
             // Title.
-            nowPlayingTitle.setText(songsArrayList.get(songId).getSongName());
+            nowPlayingTitle.setText(songsArrayList.get(param_now_playing_song).getSongName());
 
             // Subtitle.
             int authorId = albumsArrayList.get(albumId).getAlbumAuthorId() - 1;
@@ -369,6 +381,26 @@ public class RowListActivity extends AppCompatActivity {
     }
 
     /**
+     * Share data with the next activity using intent.putExtra
+     */
+    void putExtraMusicData(Intent intent) {
+        intent.putExtra("albumsArrayList", albumsArrayList);
+        intent.putExtra("authorsArrayList", authorsArrayList);
+        intent.putExtra("musicGenresArrayList", musicGenresArrayList);
+        intent.putExtra("playlistsArrayList", playlistsArrayList);
+        intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
+        intent.putExtra("songsArrayList", songsArrayList);
+
+        intent.putExtra("param_type", param_type);
+        intent.putExtra("param_artist", param_artist);
+        intent.putExtra("param_album", param_album);
+        intent.putExtra("param_genre", param_genre);
+        intent.putExtra("param_playlist", param_playlist);
+        intent.putExtra("param_now_playing_song", param_now_playing_song);
+        intent.putExtra("param_now_playing", param_now_playing);
+    }
+
+    /**
      * Captures the "back" button of the app, in order to send parameters to the previous activity.
      *
      * @param keyCode
@@ -380,19 +412,7 @@ public class RowListActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             // Back to parent activity with extra data.
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("param_type", param_type);
-            returnIntent.putExtra("param_artist", param_artist);
-            returnIntent.putExtra("param_album", param_album);
-            returnIntent.putExtra("param_genre", param_genre);
-            returnIntent.putExtra("param_playlist", param_playlist);
-            returnIntent.putExtra("param_now_playing_song", param_now_playing_song);
-            returnIntent.putExtra("param_now_playing", param_now_playing);
-            returnIntent.putExtra("albumsArrayList", albumsArrayList);
-            returnIntent.putExtra("authorsArrayList", authorsArrayList);
-            returnIntent.putExtra("musicGenresArrayList", musicGenresArrayList);
-            returnIntent.putExtra("playlistsArrayList", playlistsArrayList);
-            returnIntent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
-            returnIntent.putExtra("songsArrayList", songsArrayList);
+            putExtraMusicData(returnIntent);
             setResult(Activity.RESULT_OK, returnIntent);
             finish();
             return true;
@@ -417,6 +437,23 @@ public class RowListActivity extends AppCompatActivity {
                 //Write your code if there's no result
             }
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("param_now_playing_song", param_now_playing_song);
+        outState.putBoolean("param_now_playing", param_now_playing);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        param_now_playing_song = savedInstanceState.getInt("param_now_playing_song");
+        param_now_playing = savedInstanceState.getBoolean("param_now_playing");
+
+        // Hide/show "now playing" section.
+        setNowPlayingView();
     }
 
     // Comparator for ordering arrays of elements.

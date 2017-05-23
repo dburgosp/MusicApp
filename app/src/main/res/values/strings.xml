@@ -17,6 +17,13 @@
         music elements by name, author, etc. At the bottom side, you can play/stop the currently
         selected song.\n\nFrom here you may also search songs in your collection and buy music
         online.</string>
+    <string name="intro_now_playing">This activity shows data about the currently playing song, with
+        controls for pause/play, previous/next song and like/dislike.</string>
+
+    <!-- Titles for activities -->
+    <string name="title_options_list">List</string>
+    <string name="title_songs_list">Songs</string>
+    <string name="title_now_playing">Now playing...</string>
 
     <!-- Category names [CHAR LIMIT=20] -->
     <string name="category_artists">Artists</string>
@@ -29,8 +36,13 @@
     <!-- Miscellaneous strings -->
     <string name="pause_music">Pause music</string>
     <string name="play_music">Play music</string>
-    <string name="number_of_albums">Albums: </string>
-    <string name="number_of_songs">Songs: </string>
+    <string name="number_of_albums">Albums</string>
+    <string name="number_of_songs">Songs</string>
+    <string name="buy_music">Go to the online music store</string>
+    <string name="previous_song">Skip to the previous song</string>
+    <string name="next_song">Skip to the next song</string>
+    <string name="like_song">I like this song</string>
+    <string name="dislike_song">I don\'t like this song</string>
 
     <!-- Music genres -->
     <string name="genre_1_id">1</string>

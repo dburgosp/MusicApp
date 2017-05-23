@@ -15,13 +15,13 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/horizontalImageView"
+            android:id="@+id/columns_image"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_margin="4dp" />
 
         <TextView
-            android:id="@+id/horizontalTitleTextView"
+            android:id="@+id/columns_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -34,7 +34,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/horizontalSubtitleTextView"
+            android:id="@+id/columns_subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"

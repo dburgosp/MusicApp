@@ -48,9 +48,9 @@ public class ColumnElement extends RecyclerView.Adapter<ColumnElement.PaletteVie
 
         public PaletteViewHolder(View itemView) {
             super(itemView);
-            horizontalTitleTextView = (TextView) itemView.findViewById(R.id.horizontalTitleTextView);
-            horizontalSubtitleTextView = (TextView) itemView.findViewById(R.id.horizontalSubtitleTextView);
-            horizontalImageView = (ImageView) itemView.findViewById(R.id.horizontalImageView);
+            horizontalTitleTextView = (TextView) itemView.findViewById(R.id.columns_title);
+            horizontalSubtitleTextView = (TextView) itemView.findViewById(R.id.columns_subtitle);
+            horizontalImageView = (ImageView) itemView.findViewById(R.id.columns_image);
             itemView.setOnClickListener(this);
         }
 

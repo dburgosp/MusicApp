@@ -4,8 +4,16 @@
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_pause_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_thumb_down_white_24dp.png",
+        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_thumb_down_white_24dp.png"
+    },
+    {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_pause_circle_filled_white_48dp.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_pause_circle_filled_white_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_play_circle_filled_white_48dp.png",
+        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_play_circle_filled_white_48dp.png"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_play_arrow_black_36dp.png",
@@ -54,6 +62,10 @@
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_pause_circle_outline_black_36dp.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_pause_circle_outline_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_thumb_up_white_24dp.png",
+        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_thumb_up_white_24dp.png"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_library_music_black_48dp.png",
