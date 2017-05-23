@@ -26,6 +26,12 @@
     <string name="category_genres">Genres</string>
     <string name="category_search">Search</string>
 
+    <!-- Miscellaneous strings -->
+    <string name="pause_music">Pause music</string>
+    <string name="play_music">Play music</string>
+    <string name="number_of_albums">Albums: </string>
+    <string name="number_of_songs">Songs: </string>
+
     <!-- Music genres -->
     <string name="genre_1_id">1</string>
     <string name="genre_1_name">Rock</string>

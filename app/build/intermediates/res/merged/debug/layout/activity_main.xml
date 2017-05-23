@@ -4,48 +4,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="1"
     tools:context="com.example.david.musicapp.MainActivity">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        android:padding="16dp"
-        android:text="@string/intro_main" />
+        android:layout_weight="1.02">
 
-    <TextView
-        android:id="@+id/playlists"
-        style="@style/CategoryStylePortrait"
-        android:background="@color/purple_1"
-        android:text="@string/category_playlists" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/artists"
-        style="@style/CategoryStylePortrait"
-        android:background="@color/purple_2"
-        android:text="@string/category_artists" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:padding="16dp"
+                android:text="@string/intro_main" />
 
-    <TextView
-        android:id="@+id/albums"
-        style="@style/CategoryStylePortrait"
-        android:background="@color/purple_3"
-        android:text="@string/category_albums" />
+            <TextView
+                android:id="@+id/main_playlists_textview"
+                style="@style/CategoryStylePortrait"
+                android:background="@color/purple_1"
+                android:text="@string/category_playlists" />
 
-    <TextView
-        android:id="@+id/songs"
-        style="@style/CategoryStylePortrait"
-        android:background="@color/purple_4"
-        android:text="@string/category_songs" />
+            <TextView
+                android:id="@+id/main_artists_textview"
+                style="@style/CategoryStylePortrait"
+                android:background="@color/purple_2"
+                android:text="@string/category_artists" />
 
-    <TextView
-        android:id="@+id/genres"
-        style="@style/CategoryStylePortrait"
-        android:background="@color/purple_5"
-        android:text="@string/category_genres" />
+            <TextView
+                android:id="@+id/main_albums_textview"
+                style="@style/CategoryStylePortrait"
+                android:background="@color/purple_3"
+                android:text="@string/category_albums" />
 
-    <TextView
-        android:id="@+id/search"
-        style="@style/CategoryStylePortrait"
-        android:background="@color/purple_6"
-        android:text="@string/category_search" />
+            <TextView
+                android:id="@+id/main_songs_textview"
+                style="@style/CategoryStylePortrait"
+                android:background="@color/purple_4"
+                android:text="@string/category_songs" />
+
+            <TextView
+                android:id="@+id/main_genre_textview"
+                style="@style/CategoryStylePortrait"
+                android:background="@color/purple_5"
+                android:text="@string/category_genres" />
+
+            <TextView
+                android:id="@+id/main_search_textview"
+                style="@style/CategoryStylePortrait"
+                android:background="@color/purple_6"
+                android:text="@string/category_search" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/main_now_playing"
+        style="@style/NowPlayingLayout">
+
+        <ImageView
+            android:id="@+id/main_now_playing_image"
+            style="@style/NowPlayingImage" />
+
+        <LinearLayout
+            style="@style/NowPlayingTitle"
+            android:layout_toEndOf="@id/main_now_playing_image">
+
+            <TextView
+                android:id="@+id/main_now_playing_title"
+                style="@style/ListElementTitle" />
+
+            <TextView
+                android:id="@+id/main_now_playing_subtitle"
+                style="@style/ListElementSubtitle" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/main_now_playing_button"
+            style="@style/NowPlayingButton"
+            android:src="@drawable/ic_play_arrow_black_36dp" />
+    </RelativeLayout>
 </LinearLayout>

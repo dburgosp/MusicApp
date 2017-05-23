@@ -66,6 +66,7 @@ public class ColumnListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
                 Intent songsIntent = new Intent(ColumnListActivity.this, RowListActivity.class);
+                putExtraMusicData(songsIntent);
                 switch (param_type) {
                     case 2: // List of artists.
                     case 6: // List of songs by artist.
@@ -91,8 +92,6 @@ public class ColumnListActivity extends AppCompatActivity {
                         songsIntent.putExtra("param_playlist", position + 1);
                         break;
                 }
-                songsIntent.putExtra("param_now_playing_song", param_now_playing_song);
-                putExtraMusicData(songsIntent);
                 startActivityForResult(songsIntent, COLUMN_LIST_ACTIVITY);
             }
         }));
@@ -104,14 +103,14 @@ public class ColumnListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (param_now_playing) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Pause music", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.pause_music, Toast.LENGTH_SHORT);
                     toast.show();
-                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_black_36dp));
+                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_black_36dp));
                     param_now_playing = false;
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Play music", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.play_music, Toast.LENGTH_SHORT);
                     toast.show();
-                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_black_36dp));
+                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
                     param_now_playing = true;
                 }
             }
@@ -138,6 +137,7 @@ public class ColumnListActivity extends AppCompatActivity {
         param_genre = intent.getIntExtra("param_genre", 1);
         param_playlist = intent.getIntExtra("param_playlist", 1);
         param_now_playing_song = intent.getIntExtra("param_now_playing_song", -1);
+        param_now_playing = intent.getBooleanExtra("param_now_playing", false);
 
         // Hide/show "now playing" section.
         setNowPlayingView(param_now_playing_song);
@@ -171,12 +171,15 @@ public class ColumnListActivity extends AppCompatActivity {
                     for (Album album : albumsArrayList) {
                         if (album.getAlbumAuthorId() == authorId) n++;
                     }
-                    subtitle = "Albums: " + n;
+                    subtitle = getResources().getString(R.string.number_of_albums) + n;
 
                     // Build current element.
                     element = new Element(0, title, subtitle, drawable);
                     elementsArrayList.add(element);
                 }
+
+                // Set title for this activity.
+                this.setTitle(R.string.category_artists);
                 break;
 
             case 3: // List of albums.
@@ -197,6 +200,9 @@ public class ColumnListActivity extends AppCompatActivity {
                     element = new Element(0, title, subtitle, drawable);
                     elementsArrayList.add(element);
                 }
+
+                // Set title for this activity.
+                this.setTitle(R.string.category_albums);
                 break;
 
             case 4: // List of genres.
@@ -215,12 +221,15 @@ public class ColumnListActivity extends AppCompatActivity {
                     for (Song song : songsArrayList) {
                         if (song.getSongGenreId() == genreId) n++;
                     }
-                    subtitle = "Songs: " + n;
+                    subtitle = getResources().getString(R.string.number_of_songs) + n;
 
                     // Build current element.
                     element = new Element(0, title, subtitle, drawable);
                     elementsArrayList.add(element);
                 }
+
+                // Set title for this activity.
+                this.setTitle(R.string.category_genres);
                 break;
 
             case 5: // List of playlists.
@@ -239,12 +248,15 @@ public class ColumnListActivity extends AppCompatActivity {
                     for (PlaylistSong ps : playlistSongsArrayList) {
                         if (ps.getPlaylistId() == playlistId) n++;
                     }
-                    subtitle = "Songs: " + n;
+                    subtitle = getResources().getString(R.string.number_of_songs) + n;
 
                     // Build current element.
                     element = new Element(0, title, subtitle, drawable);
                     elementsArrayList.add(element);
                 }
+
+                // Set title for this activity.
+                this.setTitle(R.string.category_playlists);
                 break;
         }
     }
@@ -259,6 +271,14 @@ public class ColumnListActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
+
+        intent.putExtra("param_type", param_type);
+        intent.putExtra("param_artist", param_artist);
+        intent.putExtra("param_album", param_album);
+        intent.putExtra("param_genre", param_genre);
+        intent.putExtra("param_playlist", param_playlist);
+        intent.putExtra("param_now_playing_song", param_now_playing_song);
+        intent.putExtra("param_now_playing", param_now_playing);
     }
 
     /**
@@ -288,9 +308,9 @@ public class ColumnListActivity extends AppCompatActivity {
 
             // Set visibility and "play/stop" button.
             if (param_now_playing)
-                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_black_36dp));
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
             else
-                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_black_36dp));
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_black_36dp));
             nowPlayingView.setVisibility(View.VISIBLE);
         }
     }

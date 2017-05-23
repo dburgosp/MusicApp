@@ -1,48 +1,68 @@
 package com.example.david.musicapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    // Constants.
     final int NUMBER_OF_GENRES = 5;
     final int NUMBER_OF_AUTHORS = 6;
     final int NUMBER_OF_ALBUMS = 7;
     final int NUMBER_OF_SONGS = 99;
     final int NUMBER_OF_PLAYLISTS = 2;
     final int NUMBER_OF_PLAYLISTS_SONGS = 38;
+    final int MAIN_ACTIVITY = 1;
 
-    int now_playing = -1;
-
+    // Global variables.
     ArrayList<Album> albumsArrayList;
     ArrayList<Author> authorsArrayList;
     ArrayList<MusicGenre> musicGenresArrayList;
     ArrayList<Playlist> playlistsArrayList;
     ArrayList<PlaylistSong> playlistSongsArrayList;
     ArrayList<Song> songsArrayList;
-
     Intent artistsIntent, playlistsIntent, albumsIntent, genresIntent, songsIntent;
+    RelativeLayout nowPlayingView;
+    ImageView nowPlayingImage;
+    TextView nowPlayingTitle;
+    TextView nowPlayingSubtitle;
+    ImageView nowPlayingButton;
+
+    // Shared data with other activities.
+    int param_now_playing_song = -1;
+    boolean param_now_playing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
+        // Get views from the current layout.
+        nowPlayingView = (RelativeLayout) findViewById(R.id.main_now_playing);
+        nowPlayingImage = (ImageView) findViewById(R.id.main_now_playing_image);
+        nowPlayingTitle = (TextView) findViewById(R.id.main_now_playing_title);
+        nowPlayingSubtitle = (TextView) findViewById(R.id.main_now_playing_subtitle);
+        nowPlayingButton = (ImageView) findViewById(R.id.main_now_playing_button);
+
         // Create the global structures and fill them with data.
-        getData();
+        setData();
+
+        // Hide/show "now playing" section.
+        setNowPlayingView();
 
         // Find the View that shows the category
-        TextView artistsTextView = (TextView) findViewById(R.id.artists);
-        TextView playlistsTextView = (TextView) findViewById(R.id.playlists);
-        TextView albumsTextView = (TextView) findViewById(R.id.albums);
-        TextView songsTextView = (TextView) findViewById(R.id.songs);
-        TextView genresTextView = (TextView) findViewById(R.id.genres);
+        TextView artistsTextView = (TextView) findViewById(R.id.main_artists_textview);
+        TextView playlistsTextView = (TextView) findViewById(R.id.main_playlists_textview);
+        TextView albumsTextView = (TextView) findViewById(R.id.main_albums_textview);
+        TextView songsTextView = (TextView) findViewById(R.id.main_songs_textview);
+        TextView genresTextView = (TextView) findViewById(R.id.main_genre_textview);
 
         // Set a click listener on every View
         artistsTextView.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 artistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 artistsIntent.putExtra("param_type", 2); // List of artists.
                 putExtraMusicData(artistsIntent);
-                startActivity(artistsIntent);
+                startActivityForResult(artistsIntent, MAIN_ACTIVITY);
             }
         });
         playlistsTextView.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 playlistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 playlistsIntent.putExtra("param_type", 5); // List of playlists.
                 putExtraMusicData(playlistsIntent);
-                startActivity(playlistsIntent);
+                startActivityForResult(playlistsIntent, MAIN_ACTIVITY);
             }
         });
         albumsTextView.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 albumsIntent.putExtra("param_type", 3); // List of albums.
                 putExtraMusicData(albumsIntent);
-                startActivity(albumsIntent);
+                startActivityForResult(albumsIntent, MAIN_ACTIVITY);
             }
         });
         genresTextView.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 genresIntent = new Intent(MainActivity.this, ColumnListActivity.class);
                 genresIntent.putExtra("param_type", 4); // List of available music genres.
                 putExtraMusicData(genresIntent);
-                startActivity(genresIntent);
+                startActivityForResult(genresIntent, MAIN_ACTIVITY);
             }
         });
         songsTextView.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 songsIntent = new Intent(MainActivity.this, RowListActivity.class);
                 songsIntent.putExtra("param_type", 1); // Assorted list of songs.
                 putExtraMusicData(songsIntent);
-                startActivity(songsIntent);
+                startActivityForResult(songsIntent, MAIN_ACTIVITY);
             }
         });
     }
@@ -100,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Get global data for songsArrayList, authorsArrayList, playlistsArrayList, etc.
      */
-    void getData() {
+    void setData() {
         int i, genreId, authorId, albumId, albumAuthorId, songId, songAlbumId, songGenreId;
         int playlistId;
         String genreName, genreImage, authorName, authorImage, albumName, albumImage, songName;
@@ -176,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Share data with the next activity using intent.putExtra
+     *
+     * @param intent
      */
     void putExtraMusicData(Intent intent) {
         intent.putExtra("albumsArrayList", albumsArrayList);
@@ -184,10 +206,74 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
-        intent.putExtra("param_now_playing_song", -1);
+
+        intent.putExtra("param_now_playing_song", param_now_playing_song);
+        intent.putExtra("param_now_playing", param_now_playing);
+    }
+
+    /**
+     * Hides or shows the "now playing" view.
+     */
+    void setNowPlayingView() {
+        if (this.param_now_playing_song < 0) {
+            // Hide "now playing" view.
+            nowPlayingView.setVisibility(View.GONE);
+        } else {
+            // Show and configure "now playing" view.
+
+            // Image.
+            int albumId = songsArrayList.get(param_now_playing_song).getSongAlbumId() - 1;
+            String imageName = albumsArrayList.get(albumId).getAlbumImage();
+            int imageId = getResources().getIdentifier(imageName, "drawable", MainActivity.this.getPackageName());
+            nowPlayingImage.setImageDrawable(getDrawable(imageId));
+
+            // Title.
+            nowPlayingTitle.setText(songsArrayList.get(param_now_playing_song).getSongName());
+
+            // Subtitle.
+            int authorId = albumsArrayList.get(albumId).getAlbumAuthorId() - 1;
+            nowPlayingSubtitle.setText(authorsArrayList.get(authorId).getAuthorName());
+
+            // Set visibility and "play/stop" button.
+            if (param_now_playing)
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
+            else
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_black_36dp));
+            nowPlayingView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    /**
+     * Get data from previous activity.
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MAIN_ACTIVITY) {
+            if (resultCode == Activity.RESULT_OK) {
+                // Get data.
+                albumsArrayList = (ArrayList<Album>) data.getSerializableExtra("albumsArrayList");
+                authorsArrayList = (ArrayList<Author>) data.getSerializableExtra("authorsArrayList");
+                musicGenresArrayList = (ArrayList<MusicGenre>) data.getSerializableExtra("musicGenresArrayList");
+                playlistsArrayList = (ArrayList<Playlist>) data.getSerializableExtra("playlistsArrayList");
+                playlistSongsArrayList = (ArrayList<PlaylistSong>) data.getSerializableExtra("playlistSongsArrayList");
+                songsArrayList = (ArrayList<Song>) data.getSerializableExtra("songsArrayList");
+                param_now_playing_song = data.getIntExtra("param_now_playing_song", -1);
+                param_now_playing = data.getBooleanExtra("param_now_playing", false);
+
+                // Hide/show "now playing" section.
+                setNowPlayingView();
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
     }
 
     public int getNowPlaying() {
-        return now_playing;
+        return param_now_playing_song;
     }
 }

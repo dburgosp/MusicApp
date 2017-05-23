@@ -37,6 +37,7 @@
                         android:id="@+id/row_list_cover"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
+                        android:layout_marginBottom="@dimen/row_padding"
                         android:background="@drawable/shadow_layer"
                         android:padding="4dp" />
 
@@ -44,7 +45,6 @@
                         android:id="@+id/row_list_search_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/row_padding"
                         android:drawablePadding="@dimen/row_padding"
                         android:drawableStart="@drawable/ic_search_black_18dp"
                         android:gravity="fill"
@@ -117,6 +117,6 @@
         <ImageView
             android:id="@+id/row_list_now_playing_button"
             style="@style/NowPlayingButton"
-            android:src="@drawable/ic_play_circle_outline_black_36dp" />
+            android:src="@drawable/ic_play_arrow_black_36dp" />
     </RelativeLayout>
 </RelativeLayout>

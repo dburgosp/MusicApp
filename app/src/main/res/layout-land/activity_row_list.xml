@@ -112,6 +112,6 @@
         <ImageView
             android:id="@+id/row_list_now_playing_button"
             style="@style/NowPlayingButton"
-            android:src="@drawable/ic_play_circle_outline_black_36dp" />
+            android:src="@drawable/ic_play_arrow_black_36dp" />
     </RelativeLayout>
 </RelativeLayout>

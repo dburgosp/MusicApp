@@ -65,11 +65,11 @@ public class RowListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
                 // Set up the "now playing" section.
-                Toast toast = Toast.makeText(getApplicationContext(), "Play music", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.play_music, Toast.LENGTH_SHORT);
                 toast.show();
                 param_now_playing_song = elementsArrayList.get(position).getSongId() - 1;
-                setNowPlayingView(param_now_playing_song);
                 param_now_playing = true;
+                setNowPlayingView(param_now_playing_song);
             }
         }));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -91,14 +91,14 @@ public class RowListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (param_now_playing) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Pause music", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.pause_music, Toast.LENGTH_SHORT);
                     toast.show();
-                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_black_36dp));
+                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_black_36dp));
                     param_now_playing = false;
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Play music", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.play_music, Toast.LENGTH_SHORT);
                     toast.show();
-                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_black_36dp));
+                    nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
                     param_now_playing = true;
                 }
             }
@@ -125,6 +125,7 @@ public class RowListActivity extends AppCompatActivity {
         param_genre = intent.getIntExtra("param_genre", 1);
         param_playlist = intent.getIntExtra("param_playlist", 1);
         param_now_playing_song = intent.getIntExtra("param_now_playing_song", -1);
+        param_now_playing = intent.getBooleanExtra("param_now_playing", false);
 
         // Hide/show "now playing" section.
         setNowPlayingView(param_now_playing_song);
@@ -172,7 +173,7 @@ public class RowListActivity extends AppCompatActivity {
                 mainImage.setVisibility(View.GONE);
 
                 // Set title for this activity.
-                this.setTitle("All the songs");
+                this.setTitle(R.string.category_songs);
                 break;
 
             case 6: // List of songs by artist.
@@ -360,9 +361,9 @@ public class RowListActivity extends AppCompatActivity {
 
             // Set visibility and "play/stop" button.
             if (param_now_playing)
-                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_circle_outline_black_36dp));
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
             else
-                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_circle_outline_black_36dp));
+                nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_black_36dp));
             nowPlayingView.setVisibility(View.VISIBLE);
         }
     }

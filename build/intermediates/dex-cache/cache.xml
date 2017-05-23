@@ -2,22 +2,148 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\David\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="0422594b6562a5f23da380bd0e52adeb4d6b5ce9">
-        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0f8a3d644f1c3f41217acf78e113679880488b30\classes.dex" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_bd7dc31a88f3e373b1dc677673e7184b0b3bc449.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\526ea3e10ea5ce74d9ad060a307bf917b17328e7\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5e08cc95b8d60ca21cd999a9e49a56661e304c46\classes.dex" />
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_495b5ebbfcc65ddf3e541c6eaf3a66b19f36ce8f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_6d253059eda4a78eb05f313aab5aaeddb8d5d65d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\9ee1a61661cc0d24489eab5dd6627f3bcf9c2c5d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_e43606d4913c676bfbdae94a18d3b586af842c03.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\0b823acf2f7c8b5dd8d0d5766389006cd32f3b7b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_a2a83db3ccc158401eb3a4b7033813ebd42bf155.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_7875efca2ad143593c265d6ab8da72d6f045e75a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\546349c8fb7afefec60e80e5ba3437f4f0fe8a38\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_0ff2c6fe5075770a658a9a2b8f10cf1ae5374dd1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\0ba77ebc014f0288f06c29d86dd03c95fd574e09\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_2d3e9ba4c827cd1e754ed94b3d433014f1f83aed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_a7ca5a598d48d023faa56e5f99649092d7abf0b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\53d1f67c3a63ac24f1e1359be3355a4bc3e1210f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_df834e72509041cf16aff697350a19f79408f7b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\e2e8d019a60357d3a5012e3d54e23a3408b0821f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_117ac762853cd260ac97da7667d09bd78ad1217e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\68063ac6acc5663f791e68104c3f750f266ca4fa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_6145a7a3bbc67ebca4e66183fc8e35722f24291a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\fd5747a7825d3882afb8c61833854f6bc147ee03\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_6cbe08e8a01d54974d3d440aef0fdc5fba65e7a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\74d4cf8885c478408c99303e0d071ec26bbecdde\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_b4f7cea7091413956f6419ced31c7f916d022233.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\249ea3bae3237e1018adf7c32d47a38e3128e0a6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_6c3cc5ac323766dbf6e501f5fb019954ee464315.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\.android\build-cache\30b4e82cacd710380a006cbb29e632950ecc3ec9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\pre-dexed\debug\classes_025ee07725c447c758e6f446011cf3e7cf5dc6d8.jar" />
     </item>
 
 </items>
