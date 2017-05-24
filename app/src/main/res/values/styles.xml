@@ -97,6 +97,7 @@
         <item name="android:layout_width">@dimen/image</item>
         <item name="android:layout_height">@dimen/image</item>
         <item name="android:background">@drawable/shadow_layer</item>
+        <item name="android:contentDescription">@string/now_playing_image_description</item>
         <item name="android:padding">4dp</item>
     </style>
 
@@ -114,5 +115,6 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentEnd">true</item>
         <item name="android:layout_centerVertical">true</item>
+        <item name="android:contentDescription">@string/now_playing_button_description</item>
     </style>
 </resources>

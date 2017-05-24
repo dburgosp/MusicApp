@@ -792,6 +792,9 @@
         music genre or search result, and provides a list of songs related to the selected content.
         \n\nFrom here you may also search songs in your collection, buy music from the same artist,
         album or music genre, and play/stop any song in the list.</string>
+    <string name="intro_search">This activity is used for searching music (by song name, album title,
+        author, etc.) into the user\'s music database. It might produce some different results,
+        grouped by category.</string>
     <string name="like_song">I like this song</string>
     <string name="next_song">Skip to the next song</string>
     <string name="number_of_albums">Albums</string>
@@ -810,6 +813,7 @@
     <string name="playlist_2_image">playlist_2</string>
     <string name="playlist_2_name">Random list</string>
     <string name="previous_song">Skip to the previous song</string>
+    <string name="search_hint">Search for music</string>
     <string name="search_menu_title">Search</string>
     <string name="song_10_album_id">1</string>
     <string name="song_10_genre_id">1</string>
@@ -1286,6 +1290,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_now_playing">Now playing...</string>
     <string name="title_options_list">List</string>
+    <string name="title_search">Search</string>
     <string name="title_songs_list">Songs</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

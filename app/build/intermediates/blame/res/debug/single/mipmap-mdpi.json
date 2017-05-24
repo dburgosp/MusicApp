@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }

@@ -35,7 +35,9 @@
         <activity
             android:name="com.example.david.musicapp.NowPlayingActivity"
             android:label="@string/title_now_playing" />
-        <activity android:name="com.example.david.musicapp.SearchActivity" />
+        <activity
+            android:name="com.example.david.musicapp.SearchActivity"
+            android:label="@string/title_search" />
     </application>
 
 </manifest>

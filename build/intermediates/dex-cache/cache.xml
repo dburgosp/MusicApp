@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a4fab18fcb496d0245b9d2a2a15ad2e4f9764732">
+        sha1="1af71f17ba4defd665c3fcc745609819565d3cc1">
         <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0f8a3d644f1c3f41217acf78e113679880488b30\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="C:\Users\David\AndroidStudioProjects\MusicApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5e08cc95b8d60ca21cd999a9e49a56661e304c46\classes.dex" />
     </item>
 
 </items>
