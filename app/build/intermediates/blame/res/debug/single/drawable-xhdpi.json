@@ -24,36 +24,8 @@
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_play_arrow_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_play_arrow_black_24dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_play_arrow_black_24dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_add_shopping_cart_black_18dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_add_shopping_cart_black_18dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_thumb_down_white_36dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_thumb_down_white_36dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_play_circle_filled_black_24dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_play_circle_filled_black_24dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_play_circle_outline_black_36dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_play_circle_outline_black_36dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_thumb_up_white_36dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_thumb_up_white_36dp.png"
-    },
-    {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_skip_previous_white_36dp.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_skip_previous_white_36dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_play_circle_filled_black_48dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_play_circle_filled_black_48dp.png"
     },
     {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_skip_next_white_36dp.png",
@@ -64,23 +36,11 @@
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_search_black_18dp.png"
     },
     {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_pause_circle_outline_black_36dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_pause_circle_outline_black_36dp.png"
-    },
-    {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_thumb_up_white_24dp.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_thumb_up_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_library_music_black_48dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_library_music_black_48dp.png"
-    },
-    {
         "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_shopping_cart_white_18dp.png",
         "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_shopping_cart_white_18dp.png"
-    },
-    {
-        "merged": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_add_shopping_cart_black_36dp.png",
-        "source": "C:\\Users\\David\\AndroidStudioProjects\\MusicApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_add_shopping_cart_black_36dp.png"
     }
 ]

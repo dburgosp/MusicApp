@@ -19,11 +19,15 @@
         online.</string>
     <string name="intro_now_playing">This activity shows data about the currently playing song, with
         controls for pause/play, previous/next song and like/dislike.</string>
+    <string name="intro_search">This activity is used for searching music (by song name, album title,
+        author, etc.) into the user\'s music database. It might produce some different results,
+        grouped by category.</string>
 
     <!-- Titles for activities -->
     <string name="title_options_list">List</string>
     <string name="title_songs_list">Songs</string>
-    <string name="title_now_playing">Now playing...</string>
+    <string name="title_now_playing">Now playing&#8230;</string>
+    <string name="title_search">Search</string>
 
     <!-- Category names [CHAR LIMIT=20] -->
     <string name="category_artists">Artists</string>
@@ -43,6 +47,10 @@
     <string name="next_song">Skip to the next song</string>
     <string name="like_song">I like this song</string>
     <string name="dislike_song">I don\'t like this song</string>
+    <string name="search_hint">Search for music</string>
+    <string name="search_background_description">Search screen background image</string>
+    <string name="now_playing_image_description">Cover for the now playing song</string>
+    <string name="now_playing_button_description">Play/stop the now playing song</string>
 
     <!-- Music genres -->
     <string name="genre_1_id">1</string>
@@ -83,7 +91,7 @@
 
     <!-- Albums -->
     <string name="album_1_id">1</string>
-    <string name="album_1_name">¡A por ellos...! que son pocos y cobardes</string>
+    <string name="album_1_name">¡A por ellos&#8230;! que son pocos y cobardes</string>
     <string name="album_1_image">album_1</string>
     <string name="album_1_author_id">3</string>
     <string name="album_2_id">2</string>

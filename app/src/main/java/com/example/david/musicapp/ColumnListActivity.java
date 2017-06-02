@@ -37,7 +37,7 @@ public class ColumnListActivity extends AppCompatActivity {
     ImageView nowPlayingImage, nowPlayingButton;
     TextView nowPlayingTitle, nowPlayingSubtitle;
     RecyclerView recyclerView;
-    Button buyMusicButton;
+    Button buyMusicButton, searchButton;
 
     // Shared data with other activities.
     int param_type, param_artist, param_album, param_genre, param_playlist, param_now_playing_song = -1;
@@ -56,6 +56,7 @@ public class ColumnListActivity extends AppCompatActivity {
         nowPlayingButton = (ImageView) findViewById(R.id.column_list_now_playing_button);
         recyclerView = (RecyclerView) findViewById(R.id.column_list_recycler_view);
         buyMusicButton = (Button) findViewById(R.id.column_list_buy_button);
+        searchButton = (Button) findViewById(R.id.column_list_search_button);
 
         // Get music data and parameters from previous activity.
         getData(getIntent());
@@ -127,6 +128,17 @@ public class ColumnListActivity extends AppCompatActivity {
                     nowPlayingButton.setImageDrawable(getDrawable(R.drawable.ic_pause_black_36dp));
                     param_now_playing = true;
                 }
+            }
+        });
+
+        // Behaviour of "search" button.
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the search Button is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent searchIntent = new Intent(ColumnListActivity.this, SearchActivity.class);
+                putExtraMusicData(searchIntent);
+                startActivityForResult(searchIntent, COLUMN_LIST_ACTIVITY);
             }
         });
 
