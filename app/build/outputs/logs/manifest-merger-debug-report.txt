@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
@@ -14,20 +14,20 @@ ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidMan
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:5:5-32:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\David\.android\build-cache\f1aeea3c4c4ab6f3877402eb658a369dca4a86f3\output\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:cardview-v7:21.0.3] C:\Users\David\.android\build-cache\9f20b62883ddc8ffc71f2690753515be591aaa3f\output\AndroidManifest.xml:16:5-19
-MERGED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\fc31b7671d9ee58a29cc7454b0996ae685620d2a\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\David\.android\build-cache\660954480218b0ead6eb8d8efecb59ddc608052b\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\6e1dd5884ec267de42b8bcc72d9db51fd65ddf2c\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\d7f65d4e0bceeabd14c802970300b2efffe9b145\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.1] C:\Users\David\.android\build-cache\5bbfdb7a33cedeb04302620b10c31c06505330e5\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\David\.android\build-cache\3c7e22d0fe3cff888e76b5e31e70986981edb5ef\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\David\.android\build-cache\3334044e694e22d63410f2885a8cbd16139a43e2\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\David\.android\build-cache\54e50efe292276cfa65651e2c7b02b474440bad6\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\David\.android\build-cache\a9705146ba5fe04a8a4bcef036935d63de37dd73\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\David\.android\build-cache\021e999fd4fcb1a6b151fe3b61235fb84649ba87\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\build-cache\106ed20341fc88ddb0f153f5bcbb35727c283f20\output\AndroidManifest.xml:29:5-20
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:5:5-31:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\David\.android\build-cache\74d4cf8885c478408c99303e0d071ec26bbecdde\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:cardview-v7:21.0.3] C:\Users\David\.android\build-cache\9ee1a61661cc0d24489eab5dd6627f3bcf9c2c5d\output\AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\David\.android\build-cache\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\30b4e82cacd710380a006cbb29e632950ecc3ec9\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\53d1f67c3a63ac24f1e1359be3355a4bc3e1210f\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\David\.android\build-cache\e2e8d019a60357d3a5012e3d54e23a3408b0821f\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\David\.android\build-cache\fd5747a7825d3882afb8c61833854f6bc147ee03\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\David\.android\build-cache\546349c8fb7afefec60e80e5ba3437f4f0fe8a38\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\David\.android\build-cache\526ea3e10ea5ce74d9ad060a307bf917b17328e7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\David\.android\build-cache\0b823acf2f7c8b5dd8d0d5766389006cd32f3b7b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\David\.android\build-cache\249ea3bae3237e1018adf7c32d47a38e3128e0a6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\build-cache\0ba77ebc014f0288f06c29d86dd03c95fd574e09\output\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:9:9-41
 	android:supportsRtl
@@ -41,65 +41,61 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\
 	android:theme
 		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.example.david.musicapp.MainActivity
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:12:9-19:20
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:12:9-18:20
 	android:name
 		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:12:19-47
-intent-filter#android.intent.action.MAIN+android.intent.action.VIEW+android.intent.category.LAUNCHER
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:13:13-18:29
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:13:13-17:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:14:17-69
 	android:name
 		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:14:25-66
-action#android.intent.action.VIEW
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:15:17-69
-	android:name
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:17:17-77
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:17:27-74
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:16:27-74
 activity#com.example.david.musicapp.RowListActivity
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:20:9-22:56
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:19:9-21:56
 	android:label
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:22:13-53
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:21:13-53
 	android:name
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:21:13-44
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:20:13-44
 activity#com.example.david.musicapp.ColumnListActivity
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:23:9-25:58
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:22:9-24:58
 	android:label
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:25:13-55
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:24:13-55
 	android:name
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:24:13-47
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:23:13-47
 activity#com.example.david.musicapp.NowPlayingActivity
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:26:9-28:57
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:25:9-27:57
 	android:label
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:28:13-54
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:27:13-54
 	android:name
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:27:13-47
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:26:13-47
 activity#com.example.david.musicapp.SearchActivity
-ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:29:9-31:52
+ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:28:9-30:52
 	android:label
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:31:13-49
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:30:13-49
 	android:name
-		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:30:13-43
+		ADDED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml:29:13-43
 uses-sdk
 INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\David\.android\build-cache\f1aeea3c4c4ab6f3877402eb658a369dca4a86f3\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:cardview-v7:21.0.3] C:\Users\David\.android\build-cache\9f20b62883ddc8ffc71f2690753515be591aaa3f\output\AndroidManifest.xml:15:5-42
-MERGED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\fc31b7671d9ee58a29cc7454b0996ae685620d2a\output\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\David\.android\build-cache\660954480218b0ead6eb8d8efecb59ddc608052b\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\6e1dd5884ec267de42b8bcc72d9db51fd65ddf2c\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\d7f65d4e0bceeabd14c802970300b2efffe9b145\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\David\.android\build-cache\ca20fc9f54500ef545893fda1eaf43f678f8c674\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.1] C:\Users\David\.android\build-cache\5bbfdb7a33cedeb04302620b10c31c06505330e5\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\David\.android\build-cache\3c7e22d0fe3cff888e76b5e31e70986981edb5ef\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\David\.android\build-cache\3334044e694e22d63410f2885a8cbd16139a43e2\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\David\.android\build-cache\54e50efe292276cfa65651e2c7b02b474440bad6\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\David\.android\build-cache\a9705146ba5fe04a8a4bcef036935d63de37dd73\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\David\.android\build-cache\021e999fd4fcb1a6b151fe3b61235fb84649ba87\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\build-cache\106ed20341fc88ddb0f153f5bcbb35727c283f20\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\David\.android\build-cache\74d4cf8885c478408c99303e0d071ec26bbecdde\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:21.0.3] C:\Users\David\.android\build-cache\9ee1a61661cc0d24489eab5dd6627f3bcf9c2c5d\output\AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\David\.android\build-cache\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\30b4e82cacd710380a006cbb29e632950ecc3ec9\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\53d1f67c3a63ac24f1e1359be3355a4bc3e1210f\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\David\.android\build-cache\68063ac6acc5663f791e68104c3f750f266ca4fa\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] C:\Users\David\.android\build-cache\e2e8d019a60357d3a5012e3d54e23a3408b0821f\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\David\.android\build-cache\fd5747a7825d3882afb8c61833854f6bc147ee03\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\David\.android\build-cache\546349c8fb7afefec60e80e5ba3437f4f0fe8a38\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\David\.android\build-cache\526ea3e10ea5ce74d9ad060a307bf917b17328e7\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\David\.android\build-cache\0b823acf2f7c8b5dd8d0d5766389006cd32f3b7b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\David\.android\build-cache\249ea3bae3237e1018adf7c32d47a38e3128e0a6\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\build-cache\0ba77ebc014f0288f06c29d86dd03c95fd574e09\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\fc31b7671d9ee58a29cc7454b0996ae685620d2a\output\AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
@@ -107,19 +103,19 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\David\AndroidStudioProjects\MusicApp\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\fc31b7671d9ee58a29cc7454b0996ae685620d2a\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\David\.android\build-cache\660954480218b0ead6eb8d8efecb59ddc608052b\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\6e1dd5884ec267de42b8bcc72d9db51fd65ddf2c\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\d7f65d4e0bceeabd14c802970300b2efffe9b145\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\David\.android\build-cache\ca20fc9f54500ef545893fda1eaf43f678f8c674\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] C:\Users\David\.android\build-cache\5bbfdb7a33cedeb04302620b10c31c06505330e5\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\David\.android\build-cache\3c7e22d0fe3cff888e76b5e31e70986981edb5ef\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\David\.android\build-cache\3334044e694e22d63410f2885a8cbd16139a43e2\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\David\.android\build-cache\54e50efe292276cfa65651e2c7b02b474440bad6\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\David\.android\build-cache\a9705146ba5fe04a8a4bcef036935d63de37dd73\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\David\.android\build-cache\021e999fd4fcb1a6b151fe3b61235fb84649ba87\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\build-cache\106ed20341fc88ddb0f153f5bcbb35727c283f20\output\AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\David\.android\build-cache\1d4b082a9c766b8f9531d8431d0bc10e24b6383f\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\30b4e82cacd710380a006cbb29e632950ecc3ec9\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\David\.android\build-cache\53d1f67c3a63ac24f1e1359be3355a4bc3e1210f\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\David\.android\build-cache\68063ac6acc5663f791e68104c3f750f266ca4fa\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\David\.android\build-cache\e2e8d019a60357d3a5012e3d54e23a3408b0821f\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\David\.android\build-cache\fd5747a7825d3882afb8c61833854f6bc147ee03\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\David\.android\build-cache\546349c8fb7afefec60e80e5ba3437f4f0fe8a38\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\David\.android\build-cache\526ea3e10ea5ce74d9ad060a307bf917b17328e7\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\David\.android\build-cache\0b823acf2f7c8b5dd8d0d5766389006cd32f3b7b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\David\.android\build-cache\249ea3bae3237e1018adf7c32d47a38e3128e0a6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\David\.android\build-cache\0ba77ebc014f0288f06c29d86dd03c95fd574e09\output\AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\fc31b7671d9ee58a29cc7454b0996ae685620d2a\output\AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\fc31b7671d9ee58a29cc7454b0996ae685620d2a\output\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.1] C:\Users\David\.android\build-cache\640643c55b0962d910c5977263eb962260ad8fc8\output\AndroidManifest.xml:26:9-47

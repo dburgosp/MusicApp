@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Playlist> playlistsArrayList;
     ArrayList<PlaylistSong> playlistSongsArrayList;
     ArrayList<Song> songsArrayList;
-    Intent intent;
+    Intent artistsIntent, playlistsIntent, albumsIntent, genresIntent, songsIntent;
     TextView artistsTextView, playlistsTextView, albumsTextView, songsTextView, genresTextView;
-    TextView searchTextView, nowPlayingTitle, nowPlayingSubtitle;
+    TextView nowPlayingTitle, nowPlayingSubtitle;
     ImageView nowPlayingImage, nowPlayingButton;
     RelativeLayout nowPlayingView;
 
@@ -50,12 +50,6 @@ public class MainActivity extends AppCompatActivity {
         nowPlayingTitle = (TextView) findViewById(R.id.main_now_playing_title);
         nowPlayingSubtitle = (TextView) findViewById(R.id.main_now_playing_subtitle);
         nowPlayingButton = (ImageView) findViewById(R.id.main_now_playing_button);
-        artistsTextView = (TextView) findViewById(R.id.main_artists_textview);
-        playlistsTextView = (TextView) findViewById(R.id.main_playlists_textview);
-        albumsTextView = (TextView) findViewById(R.id.main_albums_textview);
-        songsTextView = (TextView) findViewById(R.id.main_songs_textview);
-        genresTextView = (TextView) findViewById(R.id.main_genre_textview);
-        searchTextView = (TextView) findViewById(R.id.main_search_textview);
 
         // Create the global structures and fill them with data.
         setData();
@@ -63,64 +57,62 @@ public class MainActivity extends AppCompatActivity {
         // Hide/show "now playing" section.
         setNowPlayingView();
 
+        // Find the View that shows the category
+        artistsTextView = (TextView) findViewById(R.id.main_artists_textview);
+        playlistsTextView = (TextView) findViewById(R.id.main_playlists_textview);
+        albumsTextView = (TextView) findViewById(R.id.main_albums_textview);
+        songsTextView = (TextView) findViewById(R.id.main_songs_textview);
+        genresTextView = (TextView) findViewById(R.id.main_genre_textview);
+
         // Set a click listener on every View
         artistsTextView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the artists TextView is clicked on.
+            // The code in this method will be executed when the artistsTextView View is clicked on.
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, ColumnListActivity.class);
-                intent.putExtra("param_type", 2); // List of artists.
-                putExtraMusicData(intent);
-                startActivityForResult(intent, MAIN_ACTIVITY);
+                artistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                artistsIntent.putExtra("param_type", 2); // List of artists.
+                putExtraMusicData(artistsIntent);
+                startActivityForResult(artistsIntent, MAIN_ACTIVITY);
             }
         });
         playlistsTextView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the playlists TextView is clicked on.
+            // The code in this method will be executed when the playlistsArrayList View is clicked on.
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, ColumnListActivity.class);
-                intent.putExtra("param_type", 5); // List of playlists.
-                putExtraMusicData(intent);
-                startActivityForResult(intent, MAIN_ACTIVITY);
+                playlistsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                playlistsIntent.putExtra("param_type", 5); // List of playlists.
+                putExtraMusicData(playlistsIntent);
+                startActivityForResult(playlistsIntent, MAIN_ACTIVITY);
             }
         });
         albumsTextView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the albums TextView is clicked on.
+            // The code in this method will be executed when the albumsArrayList View is clicked on.
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, ColumnListActivity.class);
-                intent.putExtra("param_type", 3); // List of albums.
-                putExtraMusicData(intent);
-                startActivityForResult(intent, MAIN_ACTIVITY);
+                albumsIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                albumsIntent.putExtra("param_type", 3); // List of albums.
+                putExtraMusicData(albumsIntent);
+                startActivityForResult(albumsIntent, MAIN_ACTIVITY);
             }
         });
         genresTextView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the genres TextView is clicked on.
+            // The code in this method will be executed when the genresTextView View is clicked on.
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, ColumnListActivity.class);
-                intent.putExtra("param_type", 4); // List of available music genres.
-                putExtraMusicData(intent);
-                startActivityForResult(intent, MAIN_ACTIVITY);
+                genresIntent = new Intent(MainActivity.this, ColumnListActivity.class);
+                genresIntent.putExtra("param_type", 4); // List of available music genres.
+                putExtraMusicData(genresIntent);
+                startActivityForResult(genresIntent, MAIN_ACTIVITY);
             }
         });
         songsTextView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the songs TextView is clicked on.
+            // The code in this method will be executed when the songsArrayList View is clicked on.
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, RowListActivity.class);
-                intent.putExtra("param_type", 1); // Assorted list of songs.
-                putExtraMusicData(intent);
-                startActivityForResult(intent, MAIN_ACTIVITY);
-            }
-        });
-        searchTextView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the search TextView is clicked on.
-            @Override
-            public void onClick(View view) {
-                intent = new Intent(MainActivity.this, SearchActivity.class);
-                putExtraMusicData(intent);
-                startActivityForResult(intent, MAIN_ACTIVITY);
+                songsIntent = new Intent(MainActivity.this, RowListActivity.class);
+                songsIntent.putExtra("param_type", 1); // Assorted list of songs.
+                putExtraMusicData(songsIntent);
+                startActivityForResult(songsIntent, MAIN_ACTIVITY);
             }
         });
 
@@ -245,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("playlistsArrayList", playlistsArrayList);
         intent.putExtra("playlistSongsArrayList", playlistSongsArrayList);
         intent.putExtra("songsArrayList", songsArrayList);
+
         intent.putExtra("param_now_playing_song", param_now_playing_song);
         intent.putExtra("param_now_playing", param_now_playing);
     }
